@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Pembelajaran - Bab 1</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+</head>
+<body>
+  <header>
+    <h1>Bab 1. Konstruksi Dasar Runtunan & Percabangan</h1>
+  </header>
+
+  <div class="container">
+    <h2>Pokok Bahasan</h2>
+    <p>Pembahasan materi dalam praktikum ini mencakup:</p>
+    <ul>
+      <li>Struktur Kontrol Runtunan</li>
+      <li>Struktur Kontrol Percabangan</li>
+      <li>IF-ELSE</li>
+      <li>NESTED-IF</li>
+      <li>Pemecahan masalah algoritma</li>
+    </ul>
+
+    <h2>Tujuan Praktikum</h2>
+    <p>Dengan terlaksananya praktikum ini mahasiswa diharapkan dapat:</p>
+    <ul>
+      <li>Memahami penulisan program sederhana dengan bahasa pemrograman Python</li>
+      <li>Menyelesaikan permasalahan algoritma dengan konstruksi yang sesuai</li>
+      <li>Menyusun logika pemecahan masalah dengan tepat</li>
+    </ul>
+
+    <h2>Dasar Teori</h2>
+    <h3>STUKTUR RUNTUNAN</h3>
+    <p>Pada konstruksi runtunan setiap instruksi akan dikerjakan satu per satu. 
+      Setiap instruksi dilaksanakan tepat satu kali, tidak ada instruksi yang diulang 
+      maupun tidak dilaksanakan. Urutan instruksi yang dilaksanakan pemroses sama dengan 
+      urutan aksi sebagaimana yang tertulis di dalam teks algoritmanya. Akhir dari instruksi 
+      terakhir merupakan akhir algoritma.</p>
+
+    <figure>
+      <img src="images/11.png" alt="register" class="code-image">
+      <figcaption>Gambar 1.1 Konstruksi algoritma runtunan</figcaption>
+    </figure>
+
+    <p>Contoh kasus dengan konstruksi algoritma runtunan adalah program menghitung luas persegi panjang sebagai berikut:</p>
+    <p><b>Kalimat Deskriptif</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="11" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Pseudocode</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="12" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Flowchart</b></p>
+    <figure>
+      <img src="images/12.png" alt="register" class="code-image">
+      <figcaption>Gambar 1.2 Flowchart hitung luas persegi</figcaption>
+    </figure>
+
+    <p>
+      Struktur runtunan menjalan instruksi / beris perintah tepat satu kali dari atas ke bawah. Semua dijalankan secara berurutan. Struktur runtunan merupakan konstruksi dasar algoritma dimana semua kode program pasti dibaca satu per satu dari atas ke bawah. Selain stuktur runtunan, ada dua struktur lain yang menyebabkan urutan perubahan pembacaan instruksi. 
+    </p>
+
+    <h3>STRUKTUR PERCABANGAN</h3>
+    <p>Struktur kontrol pemilihan atau percabangan adalah pernyataan yang mengijinkan user untuk memilih dan mengeksekusi blok kode spesifik dan mengabaikan blok kode yang lain. Struktur pemilihan memungkinkan suatu Aksi dieksekusi jika suatu kondisi terpenuhi atau tidak terpenuhi. Struktur pemilihan mampu memungkinkan pemroses mengikuti jalur aksi yang berbeda berdasarkan kondisi yang ada. Tidak setiap baris program akan dikerjakan. Baris program akan dikerjakan jika memenuhi syarat. Jadi, struktur pemilihan adalah : struktur program yang melakukan proses pengujian untuk mengambil suatu keputusan apakah suatu baris program atau blok instruksi akan diproses atau tidak. Pengambilan keputusan menggunakan pernyataan boolean (true/false) dg menggunakan operator pembanding( >,<,>=,<=,=,<>) yang bisa di kombinasikan dengan operator boolean (AND, OR dan NOT)</p>
+    <figure>
+      <img src="images/13.png" alt="register" class="code-image">
+      <figcaption>Gambar 1.3 Konstruksi algoritma percabangan</figcaption>
+    </figure>
+    <p>Contoh kasus dengan konstruksi algoritma pemilihan adalah program menampilkan keterangan usia seseorang sebagai berikut:</p>
+    <p><b>Kalimat deskriptif</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="13" class="language-python"></code></pre>
+    </div>
+    <p><b>Pseudocode</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="14" class="language-python"></code></pre>
+    </div>
+    <p><b>Flowchart</b></p>
+    <figure>
+      <img src="images/14.png" alt="register" class="code-image">
+      <figcaption>Gambar 1.4 Flowchart menampilkan keterangan usia seseorang</figcaption>
+    </figure>
+
+    <p>Pada contoh kasus di atas, kita dapat melihat bahwa terdapat beberapa instruksi yang tidak dijalankan. Semua tergantung nilai dari kondisi. Misal usia adalah 24 tahun, maka instruksi untuk mencetak kata ‘Balita’, ‘Anak-anak’, dan ‘Remaja’ tidak akan dijalankan, karena usia 24 memenuhi kondisi terakhir (true) yaitu ‘Dewasa’. </p>
+
+    <h3>SINTAKS DASAR PYTHON</h3>
+    <p>Sintaks If dengan satu kondisi di PYTHON, jika benar maka statement1 dijalankan, jika salah maka statement2 dijalankan:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+if kondisi :
+		statement
+      </code></pre>
+    </div>
+
+    <p>Sintaks If dengan satu kondisi di PYTHON, jika benar maka statement1 dijalankan, jika salah maka statement2 dijalankan:</p>
+        <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+if kondisi :
+		statement1
+else:
+		statement2
+      </code></pre>
+    </div>
+    
+    <p>Sintaks If dengan banyak kondisi di PYTHON:</p>
+        <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+if kondisi:
+		statement1
+elif kondisi: 
+		statement2
+else:
+		statement3
+      </code></pre>
+    </div>
+    <p>Di Python, blok if di tandai dengan Tab 1 kali, atau indentasi.</p>
+
+    <h2>Instruksi Praktikum</h2>
+    <p>
+      <ol>
+        <li>Dalam setiap pertemuan, praktikum didampingi oleh satu asisten lab. Setiap pertanyaan seputar materi dan pelaksanaan dapat ditanyakan ke asisten lab.</li>
+        <li>Pelajari dengan betul-betul setiap contoh dalam percobaan, apa kegunaan setiap sintaks dan bagaimana jalannya program.</li>
+        <li>Untuk setiap percobaan, tulislah dalam laporan bagaimana alur logikanya, variabel apa yang digunakan dan tipe datanya.</li>
+        <li>Untuk setiap soal latihan dan tugas, jawablah dengan menjelaskan alur logika penyelesaian dan implementasinya dalam program.</li>
+        <li>Susun dalam laporan per bab, dikumpulkan H+7 setelah praktikum. Pengumpulan di google drive akan dinilai langsung oleh Dosen pengampu dibantu Asisten Lab.</li>
+      </ol>
+    </p>
+    <h2>Percobaan</h2>
+    <p><b>Percobaan 1: Menghitung Gaji Karyawan</b></p>
+    <p>Seorang karyawan menerima gaji berupa gaji pokok dan tunjangan. <br>
+    <ul>
+      <li>Penghasilan tersebut harus dikurangi lagi dengan besar pajak. </li>
+      <li>Buatlah sebuah program yang membaca nama dan gaji pokok bulanannya, kemudian hitung gaji bersih karyawan tersebut. </li>
+      <li>Tampilkan nama, gaji pokok, tunjangan, pajak dan gaji bersih karyawan tersebut! </li>
+      <li>(Catatan : tunjangan sebesar 20% dari gaji pokok dan pajak 11% dari gaji pokok).</li>
+    </ul>
+    </p>
+
+    <p>Algoritma dalam bentuk pseudocode:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="15" class="language-python"></code></pre>
+    </div>
+
+    <p>Implementasi dalam program Python:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="16" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 2: Program Hitung Pembayaran</b></p>
+    <p>Bu Dora menjual mangga Rp 5000 per buah.  Seorang pembeli akan mendapat diskon 10% jika total belinya di atas Rp. 100.000. Buat program untuk menampilkan total bayar setiap pembeli !</p>
+    <p>Algoritma dalam bentuk pseudocode:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="17" class="language-python"></code></pre>
+    </div>
+
+    <p>Implementasi dalam program Python:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="18" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 3: Program cek bilangan ganjil/genap</b></p>
+    <p>Buatlah program untuk memasukkan sebuah bilangan bulat. Jika bilangan tersebut ganjil, tampilkan “Ini bilangan Ganjil”, jika bilangan tersebut bilangan genap, tampilkan “Ini bilangan Genap”.</p>
+    <p>Algoritma dalam bentuk pseudocode:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="19" class="language-python"></code></pre>
+    </div>
+
+    <p>Implementasi dalam program Python:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="110" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 4: Program cetak nilai</b></p>
+    <p>Buatlah sebuah program untuk menampilkan keterangan nilai sebagai berikut!<br>
+    <ul>
+      <li>Nilai >= 90: "Excellent"</li>
+      <li>Nilai 80-89: "Good Job"</li>
+      <li>Nilai 60-79: "Study Harder"</li>
+      <li>Nilai <=60: "Sorry you failed!"</li>
+    </ul></p>
+    <p>Algoritma dalam bentuk pseudocode:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="111" class="language-python"></code></pre>
+    </div>
+
+    <p>Implementasi dalam program Python:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="112" class="language-python"></code></pre>
+    </div>
+
+    <h2>Latihan</h2>
+    <p><b>Latihan 1. Menghitung waktu</b><br>
+    Buatlah algoritma dalam bentuk pseudocode dan implementasikan ke dalam program Python. Buat program yang menerima data masukan berupa jam, menit dan detik, lalu hitunglah total waktu dalam satuan detik dan tampilkan hasilnya! (Misal 6 jam 23 menit dan 45 detik adalah 23025 detik).</p>
+
+    <p><b>Latihan 2. Konversi satuan berat</b><br>
+    Buatlah algoritma dalam bentuk pseudocode dan implementasikan ke dalam program Python. Buat program yang menerima data masukan berupa berat dalam satuan gram, kemudian konversikan ke kilogram (kg), pon (pound) dan ons!</p>
+
+    <p><b>Latihan 3: Menghitung waktu pembicaraan dan total tarif</b><br>
+    Buatlah program Python yang menghitung durasi waktu telepon seseorang. Waktu awal dan waktu akhir dalam format hh:mm:ss. Misal tarif telepon sebuah operator adalah Rp 15/detik pada 3 menit pertama dan Rp 1/detik pada menit selanjutnya. Hitunglah lama durasi telepon dalam satuan detik kemudian tampilkan total biaya teleponnya.</p>
+
+    <p><b>Latihan 4: Konversi angka ke romawi</b><br>
+    Buatlah sebuah program Python yang membaca bilangan bulat positif dalam rentang 1 sampai 20 kemudian konversilah menjadi angka Romawi!</p>
+
+    <h2>Tugas</h2>
+    <p><b>Tugas 1: Menghitung Total Waktu Penyelesaian Tugas</b></p>
+    <p>Seorang guru Matematika ingin memperkirakan berapa lama waktu yang dibutuhkan siswanya untuk menyelesaikan sebuah lembar kerja. Anda diharuskan untuk mengembangkan algoritma untuk menghitung perkiraan ini. Algoritma harus melakukan hal berikut:<br>
+    <ul>
+      <li>Input berapa waktu pengerjaan yang standar untuk satu soal.</li>
+      <li>Input jumlah soal yang sulit.</li>
+      <li>Input jumlah soal yang mudah.</li>
+      <li>Hitung total waktu pengerjaan dengan mempertimbangkan bahwa: </li>
+      o	Untuk sebuah pertanyaan 'sulit' maka jumlah detiknya akan bertambah 30.<br>
+      o	Untuk sebuah pertanyaan 'mudah' maka jumlah detiknya akan bertambah 10.<br>
+      <li>Tampilkan jumlah detik yang diperlukan untuk menyelesaikan lembar kerja.</li>
+    </ul>
+    Tulis pseudocode yang mewakili algoritma penyelesaian soal ini dan implementasikan dalam program Python!
+    </p>
+
+    <p><b>Tugas 2: Menghitung Total Biaya Pupuk</b></p>
+    <p>Setiap 1 hektar (ha) kebun jagung memerlukan dosis pupuk yang tepat agar hasil panen maksimal. Kebun jagung memerlukan pupuk kandang sebesar 1,5 ton per ha dan pupuk anorganik sebesar 200 kg Urea, 80 kg TSP, dan 50 kg KCL per ha. Jika harga pupuk kandang adalah Rp 2.000/kg, harga pupuk Urea Rp 9.500/kg, harga pupuk TSP Rp 13.000/kg, dan harga pupuk KCL Rp 14.500/kg, hitunglah:<br>
+    <ul>
+      <li>Berapa jumlah pupuk yang diperlukan untuk Y hektar kebun jagung?</li>
+      <li>Berapa total biaya pupuk yang harus dikeluarkan untuk Y hektar kebun jagung?</li>
+    </ul>
+    Implementasikan dalam program Python!
+    </p>
+
+    <p><b>Tugas 3: Menentukan jumlah hari di bulan tertentu</b></p>
+    <p>Buatlah program yang menerima data masukan nomor bulan dan tahun, lalu menampilkan jumlah hari pada bulan tersebut. Misal, jika dibaca bulan 8 (Agustus) tahun 2014 maka jumlah harinya adalah 31. Perhatikan juga jumlah hari pada bulan Februari tidak seperti bulan lain. Pada tahun kabisat jumlah hari bulan Februari adalah 29, selain dari itu adalah 28.
+    <br>Contoh tampilan:</p>
+    <div class="code-container">
+    <pre><code class="language-python">
+Masukkan tahun: 1923
+Masukkan bulan: 2
+Jumlah hari di bulan Februari tahun 1923 adalah 28
+
+Masukkan tahun: 2000
+Masukkan bulan: 2
+Jumlah hari di bulan Februari tahun 2000 adalah 29
+      </code></pre>
+    </div>
+
+    <p><b>Tugas 4: Menghitung pembayaran rumah</b></p>
+    <p>Buatlah program penghitungan pembayaran rumah dengan kondisi berikut:</p>
+    <figure>
+      <img src="images/15.png" alt="register" class="code-image">
+      <figcaption>Gambar 1.5 Soal percabangan pembelian rumah</figcaption>
+    </figure>
+
+    <p>
+    1. Pilih tipe rumah dan jenis pembayaran, kemudian tampilkan detail pembayaran sesuai dengan tipe dan metode pembayaran yang dipilih. <br>
+    2. Keterangan untuk rumah dengan pembayaran kredit:
+    <ul>
+    <li>Uang muka dan jangka cicilan diinput dari keyboard.</li>
+    <li>Hutang pokok dihitung dari harga pokok rumah dikurangi uang muka.</li>
+    <li>Cicilan/bulan dihitung dari besarnya hutang dibagi dengan jangka bulan pembayaran.</li>
+  </ul>
+  Contoh luaran program:
+    </p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="113" class="language-python"></code></pre>
+    </div>
+
+    <div class="nav-container">
+      <a href="index.html" class="nav-btn">Daftar Bab</a>
+      <a href="index.html" class="nav-btn">Bab Sebelumnya</a>
+      <a href="bab2.html" class="nav-btn">Bab Selanjutnya</a>
+    </div>
+
+  </div>
+
+   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script>
+function loadCode(fileName, elementId) {
+  fetch(fileName)
+    .then(res => res.text())
+    .then(code => {
+      const el = document.getElementById(elementId);
+      el.textContent = code;
+      Prism.highlightElement(el);
+    })
+    .catch(err => console.error('Gagal memuat file:', err));
+}
+
+// memuat file langsung dari folder /codes/
+loadCode('codes/11.txt', '11');
+loadCode('codes/12.txt', '12');
+loadCode('codes/13.txt', '13');
+loadCode('codes/14.txt', '14');
+loadCode('codes/15.txt', '15');
+loadCode('codes/16.txt', '16');
+loadCode('codes/17.txt', '17');
+loadCode('codes/18.txt', '18');
+loadCode('codes/19.txt', '19');
+loadCode('codes/110.txt', '110');
+loadCode('codes/111.txt', '111');
+loadCode('codes/112.txt', '112');
+loadCode('codes/113.txt', '113');
+  </script>
+</body>
+</html>
