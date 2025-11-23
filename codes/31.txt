@@ -1,0 +1,21 @@
+#membuat matriks ordo 2x2
+matriksA = [ [5,2], [2,6] ]
+
+#membuat matriks ordo 3x3
+matriksB = [ [1,2,4], [6,5,1], [7,2,5]]
+
+#membuat matriks ordo 3x4
+matriksC= [ [1,2,3,4], [5,6,7,8], [2,4,1,5]]
+
+#menampilkan isi matriks
+for i in range (0,3) :
+    for j in range (0,3) :
+        print (matriksB[i][j], end = ' ')
+    print ()
+
+matX = matriksB
+
+for i in range (0,3) :
+    for j in range (0,3) :
+        print (matX[i][j], end = ' ')
+    print ()

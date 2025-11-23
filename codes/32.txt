@@ -1,0 +1,17 @@
+#membuat list untuk menampung baris data
+matrix = []
+for a in range (3) :
+    #membuat list untuk menampung data di tiap baris
+    baris = []
+    for b in range (4) :
+        nilai = int(input("Masukkan elemen = "))
+        baris.append(nilai)
+    #menambahkan tiap list baris ke matrix
+    #implementasi list di dalam list    
+    matrix.append(baris)
+
+#menampilkan isi list yang sudah diinputkan
+for i in range (3) :
+    for j in range (4) :
+        print (matrix[i][j], end = ' ')
+    print ()

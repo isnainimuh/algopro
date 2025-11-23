@@ -1,0 +1,11 @@
+from random import randint
+matriks=[]
+
+for i in range (3) :
+    elemen = []
+    for j in range (4) :
+        bil = randint(1,9)
+        print (bil, end = " ")
+        elemen.append(bil)
+    print ()
+    matriks.append(elemen)

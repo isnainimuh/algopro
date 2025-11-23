@@ -1,0 +1,28 @@
+matA = [[1,2,3], [4,5,6], [7,8,9]]
+matB = [[1,1,1], [1,1,1], [1,1,1]]
+matC =[]
+matD =[]
+data1 = []
+data2 = []
+for i in range (3) :
+    for j in range (3) :
+        hasil1=matA[i][j]+matB[i][j]
+        hasil2=matA[i][j]-matB[i][j]
+        data1.append(hasil1)
+        data2.append(hasil2)
+    matC.append(data1)
+    matD.append(data2)
+    data1 = []
+    data2 = []
+
+print("Hasil Penjumlahan:")
+for i in range(3):
+    for j in range(3):
+        print (matC[i][j],end=" ")
+    print()
+
+print("Hasil Pengurangan:")
+for i in range(3):
+    for j in range(3):
+        print (matD[i][j],end=" ")
+    print()
