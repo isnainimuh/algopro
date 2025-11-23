@@ -35,6 +35,97 @@ header {
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-h3 {
+.container {
+  padding: 20px 40px;
+  text-align: justify;
+}
+
+.container p {
+margin-top: 16px;
+}
+
+h2 {
   color: #004b8d;
+  margin-top: 30px;
+}
+
+h3 {
+  color: #002850;
+  margin-top: 20px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+pre code {
+  display: block;
+  background: #f5f6f8;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: "Consolas", "Courier New", monospace;
+  overflow-x: auto;
+  position: relative;
+}
+
+.code-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #004b8d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: #0066c2;
+}
+
+.nav-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.nav-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 18px;
+  background-color: #004b8d;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #0066c2;
+}
+
+figure {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.code-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
 }
