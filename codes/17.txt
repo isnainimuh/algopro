@@ -1,0 +1,10 @@
+Program Hitung Pembayaran
+{menghitung total bayar pembelian mangga)
+Deklarasi :
+jumlah_beli, total : integer
+Deskripsi :
+read (jumlah_beli)
+total <- jumlah_beli * 5000
+if (total>100000)  then
+	total = total – (total*0.1)
+write (total)

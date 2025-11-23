@@ -1,0 +1,16 @@
+Algoritma Klasifikasi Usia
+{menampilkan klasifikasi berdasarkan usia}
+Deklarasi:
+usia= integer
+Deskripsi:
+read (usia)
+if (usia < 5 ) then
+	write ("Balita")
+elseif (usia < 12) then
+	write ("Anak-anak")
+elseif (usia < 19) then
+	write ("Remaja")
+else
+	write ("Dewasa")
+endif
+end

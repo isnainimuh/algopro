@@ -1,0 +1,8 @@
+Algoritma Menghitung luas persegi panjang
+{menghitung luas persegi panjang}
+Deklarasi:
+panjang, lebar, luas = integer
+Deskripsi:
+read (panjang, lebar)
+luas <- panjang * lebar
+write (luas)

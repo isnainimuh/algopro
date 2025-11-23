@@ -1,0 +1,11 @@
+Program Hitung Gaji
+{menghitung gaji bersih dari gapok, tunjangan dan dan pajak}
+Deklarasi:
+Gapok, nama, tunjangan, pajak, gaji_bersih: float
+Deskripsi:
+read (nama, gapok)
+Tunjangan = gapok * 0.2
+Pajak=gapok*0.11
+Gaji_bersih= gapok + tunjangan – pajak
+Write (nama, gapok, tunjangan, pajak, gaji_bersih)
+end

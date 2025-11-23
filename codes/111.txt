@@ -1,0 +1,14 @@
+Program Cetak Nilai
+{mengecek nilai & menampilkan keterangan)
+Deklarasi:
+nilai: integer
+Deskripsi:
+read (nilai)
+if (nilai >= 90) then
+	write ("Excellent")
+else if (nilai >=80) && (nilai<=89) then
+	write ("Good Job")
+else if (nilai>=60) && (nilai<=79) then
+	write ("study harder")
+else	
+	write ("Sorry, you failed!")

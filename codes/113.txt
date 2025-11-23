@@ -1,0 +1,20 @@
+Pilih jenis pembayaran!
+1. Tunai
+2. Kredit
+Masukkan kode jenis pembayaran yang dipilih = 2
+
+Pilih Tipe!
+1. Tipe 36
+2. Tipe 45
+Masukkan kode tipe rumah yang dipilih = 2
+
+Tipe rumah yang dipilih adalah tipe 45 dengan pembayaran kredit
+Harga pokok rumah = Rp 300000000
+Masukkan uang muka = Rp 50000000
+Masukkan jangka cicilan dalam tahun = 5
+
+Detail Pembayaran
+Biaya administrasi = Rp 7500000
+Bunga per bulan = Rp 2499999
+Angsuran yang dibayar tiap bulan = Rp 6666665
+Total pembayaran = Rp 457499900

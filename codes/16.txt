@@ -1,0 +1,8 @@
+nama = input("Masukkan nama: ")
+gapok = int(input("Masukkan gaji pokok: "))
+tunjangan = gapok * 0.2
+pajak = gapok * 0.11
+gaji_bersih = gapok + tunjangan - pajak
+print("Tunjangan: ", tunjangan)
+print("Pajak: ", pajak)
+print("Gaji bersih: ", gaji_bersih)

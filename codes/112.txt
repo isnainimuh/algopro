@@ -1,0 +1,12 @@
+#input nilai
+nilai = int(input("Masukkan nilai: "))
+
+#cek kategori nilai
+if nilai >= 90:
+    print("Excellent")
+elif 80 <= nilai <=89:
+    print("Good Job")
+elif 60 <= nilai <=79:
+    print("Study Harder")
+else:
+    print("Sorry, you failed!")

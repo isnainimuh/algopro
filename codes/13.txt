@@ -1,0 +1,11 @@
+Algoritma menampilkan keterangan usia
+{menampilkan klasifikasi berdasarkan usia}
+Deklarasi:
+usia = integer
+Deskripsi:
+1. Masukkan usia
+2. Jika usia di bawah 5 tahun tampilkan "Balita"
+3. Jika usia di bawah 12 tahun tampilkan "Anak-Anak"
+4. Jika usia di bawah 19 tahun tampilkan "Remaja"
+5. Jika usia selain dari itu semua tampilkan "Dewasa"
+6. Selesai

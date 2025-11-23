@@ -1,0 +1,10 @@
+Program Cek Bilangan
+{mengecek bilangan ganjil genap)
+Deklarasi:
+bilangan: integer
+Deskripsi:
+read (bilangan)
+if (bilangan % 2 != 0) then
+	write ("Bilangan ganjil")
+else
+	write ("Bilangan genap")

@@ -1,0 +1,12 @@
+#input jumlah mangga
+jumlah = int(input("Jumlah mangga yg dibeli: "))
+
+#hitung total pembelian
+total = jumlah * 5000
+
+#cek diskon
+if total>100000:
+    total -= total*0.1
+
+#cetak total akhir
+print("Total bayar: ", total)
