@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Pembelajaran - Bab 3</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+</head>
+<body>
+  <header>
+    <h1>Bab 3. Operasi Matriks</h1>
+  </header>
+
+  <div class="container">
+    <h2>Pokok Bahasan</h2>
+    <p>Pembahasan materi dalam praktikum ini mencakup:</p>
+    <ul>
+      <li>Pengenalan Matriks</li>
+      <li>Pembuatan Matriks dengan Python</li>
+      <li>Macam-macam Operasi Matriks</li>
+    </ul>
+
+    <h2>Tujuan Praktikum</h2>
+    <p>Dengan terlaksananya praktikum ini mahasiswa diharapkan dapat:</p>
+    <ul>
+      <li>Memahami proses operasi matriks.</li>
+      <li>Memecahkan permasalahan operasi matriks.</li>
+    </ul>
+
+    <h2>Dasar Teori</h2>
+    <h3>PENGENALAN MATRIKS</h3>
+    <p>Dalam matematika, matriks adalah susunan bilangan, simbol, atau ekspresi yang disusun dalam baris dan kolom sehingga membentuk suatu bangun persegi.</p>
+    <p><b>Jenis-jenis matriks</b></p>
+    <p><b>Matriks transpose </b>adalah matriks yang diperoleh dari matriks yang lain dengan menjadikan elemen-elemen baris menjadi kolom (elemen kolom menjadi elemen baris).</p>
+    <p>Misal A adalah sebuah matriks asal dan At adalah matriks tanspose: At [j, i] = A[i, j] untuk setiap i dan j.</p>
+    <figure>
+      <img src="images/31.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.1 Contoh transformasi matriks (baris menjadi kolom dan bisa juga sebaliknya)</figcaption>
+    </figure>
+
+  <p><b>Matriks Simetri</b>. Matriks A dikatakan simetri jika A adalah matriks bujursangkar (jumlah baris = jumlah kolom) dan A[i, j] = A[j,i] untuk setiap i dan j (dengan kata lain, elemen-elemen di bawah diagonal utama merupakan percerminan elemen-elemen di atasnya, atau sebaliknya. Elemen diagonal utama pada matriks di bawah ini dinyatakan dengan blok biru).</p>
+    <figure>
+      <img src="images/32.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.2 Matriks a, b dan c.</figcaption>
+    </figure>
+  <p>Keterangan:<br>
+<br>(a)	Bukan Matriks Simetri karena ordo berbeda
+<br>(b)	Matriks Simetri
+<br>(c)	Bukan matriks simetri karena elemen C[i, j] != C[j, i]
+</p>
+
+  <p>Matriks Nol: Matriks Nol adalah matriks dengan semua elemen adalah nol (0). Matriks ini banyak berguna dalam matematika, khususya untuk menyimpulkan apakah hasil operasi matriks menghasilkan matriks nol.
+<br>Contoh matriks 0 berukuran 4 x 4:</p>
+    <figure>
+      <img src="images/33.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.3 Matriks 0 berordo 4  x 4.</figcaption>
+    </figure>
+
+  <p><b>Matriks segitiga bawah</b> adalah matriks bujursangkar dengan semua elemen di atas diagonal utama adalah 0. Matriks segitiga bawah banyak digunakan dalam pembahasan solusi sistem persamaan linear.
+  <br>Contoh matriks segitiga bawah berukuran 4 x 4:
+  </p>
+  <figure>
+      <img src="images/34.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.4 Matriks segitiga bawah berordo 4x4.</figcaption>
+    </figure>
+
+  <p><b>Matriks identitas </b> adalah matriks persegi (jumlah baris dan kolomnya sama) yang memiliki angka 1 pada semua elemen diagonal utamanya dan angka 0 di semua elemen lainnya. Matriks ini berperan mirip angka \(1\) dalam perkalian bilangan riil, karena saat dikalikan dengan matriks lain, hasilnya adalah matriks itu sendiri. Matriks ini sering dinotasikan sebagai <b><i>I<sub>n</sub></i></b> atau hanya <b><i>I</i></b> di mana <b><i>n</i></b> menunjukkan ukuran matriks tersebut.
+  <br>Contoh matriks identitas:
+  </p>
+  <figure>
+      <img src="images/310.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.10 Matriks identitas.</figcaption>
+    </figure>
+
+  <h3>OPERASI MATRIKS</h3>
+  <p><b>Penjumlahan dan Pengurangan Matriks</b></p>
+  <p>Syarat penjumlahan dan pengurangan matriks yaitu : jika terdapat dua matriks, misal matriks A dan B, yang memiliki ordo sama, maka elemen-elemen yang seletak dapat dijumlahkan atau dikurangkan. Jumlah matriks A dan matriks B dapat dinyatakan dengan A+B, sedangkan selisih matriks A dan matriks B dapat dinyatakan dengan A – B. Berikut operasi penjumlahan dan pengurangan matriks:</p>
+    <figure>
+      <img src="images/35.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.5 Rumus penjumlahan dua buah matriks.</figcaption>
+    </figure>
+
+    <p><b>Perkalian Skalar Matriks</b></p>
+    <p>Pada operasi perkalian skalar, sebuah matriks dikalikan dengan bilangan skalar. Jika diketahui A merupakan suatu matriks dan K merupakan bilangan real, maka hasil perkalian K dengan matriks A adalah matriks yang diperoleh dengan mengalikan setiap elemen A dengan K. Berikut operasi perkalian skalar matriks:</p>
+    <figure>
+      <img src="images/36.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.6 Rumus perkalian skalar matriks.</figcaption>
+    </figure>
+
+    <p><b>Perkalian Dua Matriks</b></p>
+    <p>Berbeda dengan perkalian skalar yang hanya mengalikan setiap elemen matriks dengan bilangan skalar, perkalian dua matriks memiliki aturan tersendiri.  Syarat dua buah matriks, misal matriks A dan matriks B, dapat dikalikan adalah jika banyaknya kolom matriks A sama dengan banyaknya baris matriks B. Berikut operasi perkalian dua matriks:</p>
+    <figure>
+      <img src="images/37.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.7 Rumus perkalian dua matriks (jumlah kolom matriks A harus sama dengan jumlah baris matriks B).</figcaption>
+    </figure>
+
+
+    <h2>Instruksi Praktikum</h2>
+    <p>
+      <ol>
+        <li>Dalam setiap pertemuan, praktikum didampingi oleh satu asisten lab. Setiap pertanyaan seputar materi dan pelaksanaan dapat ditanyakan ke asisten lab.</li>
+        <li>Pelajari dengan betul-betul setiap contoh dalam percobaan, apa kegunaan setiap sintaks dan bagaimana jalannya program.</li>
+        <li>Untuk setiap percobaan, tulislah dalam laporan bagaimana alur logikanya, dan bagaimana menggunakan list dan perulangan untuk melakukan operasi matriks.</li>
+        <li>Untuk setiap soal latihan dan tugas, jawablah dengan menjelaskan alur logika penyelesaian dan implementasinya dalam program.</li>
+        <li>Susun dalam laporan per bab, dikumpulkan H+7 setelah praktikum. Pengumpulan di google drive akan dinilai langsung oleh Dosen pengampu dibantu Asisten Lab.</li>
+      </ol>
+    </p>
+    <h2>Percobaan</h2>
+    <p><b>Percobaan 1: Membuat matriks dengan List Dua Dimensi</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="31" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 2: Menampung Elemen Matriks dari Inputan User</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="32" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 3: Mengisi elemen matriks dari bilangan acak</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="33" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 4: Program Penjumlahan dan Pengurangan Matriks</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="34" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 5: Program perkalian matriks</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="35" class="language-python"></code></pre>
+    </div>
+
+    <h2>Latihan</h2>
+    <p><b>Latihan 1. Transpose matriks.</b></p>
+    <p>Buatlah program untuk melakukan transpose matriks (mengubah baris menjadi kolom dan sebaliknya).
+    </p>
+
+    <p><b>Latihan 2. Mencari nilai maksimum</b></p>
+    <p>Buat program untuk mencari nilai maksimum dalam matriks.</p>
+
+    <p><b>Latihan 3: Perkalian skalar</b></p>
+    <p>Buat program untuk mengalikan setiap elemen matriks dengan suatu skalar.
+    </p>
+
+    <p><b>Latihan 4: Matriks identitas</b></p>
+    <p>Buat program mengecek apakah sebuah matriks merupakan matriks identitas.
+    </p>
+
+     <p><b>Latihan 5. Menjumlahkan elemen matriks</b></p>
+    <p>Buat program untuk menjumlahkan elemen-elemen pada satu baris tertentu.
+</p>
+
+    <h2>Tugas</h2>
+    <p><b>Tugas 1: Menggeser elemen matriks</b></p>
+    <p>Diberikan sebuah matriks yang elemennya sudah terdefinisi berukuran 4x4.  Buatlah program untuk menggeser elemen-elemen matriks pada baris ke-i menjadi baris ke-(i+1), untuk semua i=1,2,3,4. Pergeseran bersifat sirkuler, sehingga elemen di baris taerakhir pindah ke baris 1.
+      <br>Contoh:
+    </p>
+    <figure>
+      <img src="images/38.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.8 Menggeser elemen matriks sebanyak k.</figcaption>
+    </figure>
+
+    <p><b>Tugas 2 : Menjumlahkan elemen di setiap baris dan kolom matriks</b></p>
+    <p>Buatlah sebuah program untuk menjumlahkan elemen-elemen pada setiap baris dan kolom sebuah matriks. Misalkan hasil penjumlahan disimpan pada kolom tambahan. Jadi hasil tambahan elemen baris disimpan di kolom paling kanan, dan hasil penjumlahan kolom disimpan di baris paling bawah.
+    <br>Contoh:</p>
+    <figure>
+      <img src="images/39.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.9 Menjumlahkan elemen tiap baris dan kolom.</figcaption>
+    </figure>
+
+    <p><b>Tugas 3 : Membuat matriks Segitiga Bawah</b></p>
+    <p>Buatlah sebuah program untuk membuat matriks Segitiga Bawah. Gunakan List Multi dimensi. Matriks Segitiga bawah adalah matris bujur sangkar (jumlah baris sama dengan jumlah kolom) kemudian elemen-elemen diatas garis diagonal adalah 0.
+    <br>Contoh luaran:
+    </p>
+    <figure>
+      <img src="images/34.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.4 Matriks segitiga bawah.</figcaption>
+    </figure>
+
+    <p><b>Tugas 4: Menampilkan diagonal utama dan sekunder</b></p>
+    <p>Buat program menampilkan diagonal utama dan diagonal sekunder matriks.</p>
+    <figure>
+      <img src="images/311.png" alt="register" class="code-image">
+      <figcaption>Gambar 3.11 Diagonal utama dan diagonal sekunder matriks</figcaption>
+    </figure>
+
+    <div class="nav-container">
+      <a href="index.html" class="nav-btn">Daftar Bab</a>
+      <a href="bab2.html" class="nav-btn">Bab Sebelumnya</a>
+      <a href="bab4.html" class="nav-btn">Bab Selanjutnya</a>
+    </div>
+
+  </div>
+
+   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script>
+function loadCode(fileName, elementId) {
+  fetch(fileName)
+    .then(res => res.text())
+    .then(code => {
+      const el = document.getElementById(elementId);
+      el.textContent = code;
+      Prism.highlightElement(el);
+    })
+    .catch(err => console.error('Gagal memuat file:', err));
+}
+
+// memuat file langsung dari folder /codes/
+loadCode('codes/31.txt', '31');
+loadCode('codes/32.txt', '32');
+loadCode('codes/33.txt', '33');
+loadCode('codes/34.txt', '34');
+loadCode('codes/35.txt', '35');
+  </script>
+</body>
+</html>
