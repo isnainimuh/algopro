@@ -1,0 +1,10 @@
+Algoritma luas persegi panjang
+{menghitung luas dari masukan panjang dan lebar}
+Deklarasi:
+panjang, lebar, luas = integer
+Deskripsi:
+1. Masukkan panjang
+2. Masukkan lebar
+3. Hitung luas persegi panjang dengan rumus panjang kali lebar
+4. Tampilkan luas
+5. Selesai
