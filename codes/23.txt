@@ -1,0 +1,8 @@
+#ascending
+for i in range(100, 125, 2):
+    print(i, end=' ')
+
+print()
+#descending
+for j in range(50, 0, -5):
+    print(j, end=' ')

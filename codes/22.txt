@@ -1,0 +1,8 @@
+nilai = [80, 67, 89, 75, 81]
+
+sum = 0
+for i in nilai:
+    sum = sum + i
+
+print("Jumlah seluruh data: ", sum)
+print("Rata-rata nilai: ", sum/len(nilai))

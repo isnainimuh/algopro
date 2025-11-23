@@ -1,0 +1,4 @@
+for i in range(10):
+    print("Aku belajar Python")
+    if i==4:
+        break
