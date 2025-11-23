@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Pembelajaran - Bab 2</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+</head>
+<body>
+  <header>
+    <h1>Bab 2. Konstruksi Dasar Perulangan & Tipe Data Array</h1>
+  </header>
+
+  <div class="container">
+    <h2>Pokok Bahasan</h2>
+    <p>Pembahasan materi dalam praktikum ini mencakup:</p>
+    <ul>
+      <li>Struktur Kontrol Perulangan</li>
+      <li>While, For, dan Nested For</li>
+      <li>Tipe Data Array/List</li>
+      <li>Pemecahan masalah algoritma dengan perulangan dan array</li>
+    </ul>
+
+    <h2>Tujuan Praktikum</h2>
+    <p>Dengan terlaksananya praktikum ini mahasiswa diharapkan dapat:</p>
+    <ul>
+      <li>Memahami logika perulangan.</li>
+      <li>Memahami pemberian kondisi untuk perulangan.</li>
+      <li>Memahami penggunaan array dalam program.</li>
+      <li>Menyusun logika pemecahan masalah dengan memanfaatkan perulangan dan array.</li>
+    </ul>
+
+    <h2>Dasar Teori</h2>
+    <h3>STUKTUR PERULANGAN</h3>
+    <p>Struktur pengulangan (Loop) digunakan untuk mengulang instruksi berdasarkan suatu kondisi tertentu. Dengan demikian kita tidak perlu menulis ulang instruksi tersebut sebanyak pengulangan yang kita inginkan. Banyak pengulangan dapat ditentukan sesuai dengan kondisi yang diberikan. Dengan kata lain, pengulangan tersebut akan dilakukan selama kondisi memenuhi syarat. Pengulangan akan dihentikan jika kondisi tidak memenuhi syarat.</p>
+    <p>Struktur pengulangan di dalam program terdiri atas dua bagian penting:<br>
+    <ol>
+      <li>Kondisi pengulangan: ekspresi bernilai boolean yang harus dipenuhi untuk melaksanakan pengulangan. Kondisi / syarat ini ada yang dinyatakan secara eksplisit oleh pemrogram atau dikelola sendiri oleh komputer (implisit).</li>
+      <li>Badan (body) pengulangan: sekumpulan aksi yang diulang selama kondisi pengulangan terpenuhi</li>
+    </ol>
+    </p>
+    <p>Di samping itu, struktur pengulangan biasanya disertai dengan bagian:
+      <ol>
+        <li>Inisialisasi: Penentuan nilai awal variabel pencacah pengulangan, dan kondisi yang harus dipenuhi untuk melaksanakan pengulangan.</li>
+        <li>Badan pengulangan: penulisan instruksi yang ingin dilakukan secara berulang.</li>
+        <li>Terminasi yaitu aksi yang dilakukan setelah pengulangan selesai dilaksanakan.</li>
+      </ol>
+    </p>
+
+  <p>Di dalam algoritma, terdapat beberapa macam konstruksi pengulangan yang berbeda. Beberapa konstruksi berbeda dapat dipakai untuk persoalan yang sama, namun ada konstruksi pengulangan yang hanya cocok dipakai untuk persoalan tertentu. Pemilihan konstruksi ini dapat mempengaruhi kebenaran algoritma.
+  Pada banyak persoalan, jumlah pengulangan tidak diketahui dengan pasti. Yang dapat ditentukan hanyalah kondisi berhenti pengulangan, artinya instruksi-instruksi di dalam badan pengulangan diulangi sampai kondisi berhenti terpenuhi. Jenis pengulangan ini termasuk ke dalam pengulangan dengan kondisi (conditional looping).
+  </p>
+
+  <p>
+    Terdapat dua bentuk pengulangan yang umumnya digunakan yaitu pengulangan FOR dan While-Do.<br> 
+  </p>
+  <p><b>A.	Perulangan FOR</b></p>
+  <p>Konstruksi FOR digunakan untuk melakukan pengulangan sejumlah kali yang telah dispesifikasikan sebelumnya. Jumlah pengulangan diketahui atau dapat ditentukan sebelum eksekusi program.
+    Bentuk umum konstruksi FOR ini ada dua macam For Menaik dan For Menurun.
+  </p>
+  <p><b>FOR Menaik</b></p>
+  <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+for pencacah <-- (nilai_awal) to (nilai_akhir) do
+    aksi
+    end for
+    </code></pre>
+  </div>
+
+  <p>Keterangan:<br>
+  <ol>
+    <li>Pencacah haruslah variabel dari tipe data yang memiliki predecessor dan successor, dalam hal ini hanya integer atau karakter. Tipe data riil (bilangan pecahan) tidak dapat digunakan sebagai pencacah.</li>
+    <li>Aksi dapat berupa satu atau lebih instruksi.</li>
+    <li>Nilai_awal harus lebih kecil atau sama dengan nilai_akhir. Jika nilai_awal lebih besar dari nilai_akhir, maka badan pengulangan tidak dimasuki.     Pada awal pengulangan, pencacah diinisialisasi dengan nilai_awal. Nilai pencacah secara otomatis bertambah satu setiap kali badan pengulangan tersebut dimasuki, sampai akhirnya nilai pencacah sama dengan nilai_akhir. Jumlah pengulangan yang terjadi adalah nilai_akhir – nilai_awal + 1.</li>
+  </ol></p>
+
+    <p><b>FOR Menurun</b></p>
+  <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+for pencacah <-- (nilai_akhir) downto (nilai_awal) do
+    aksi
+    end for
+      </code></pre>
+  </div>
+
+  <p>Keterangan:<br>
+  <ol>
+    <li>Pencacah haruslah variabel dari tipe data yang memiliki predecessor dan successor, dalam hal ini hanya integer atau karakter. Tipe data riil (bilangan pecahan) tidak dapat digunakan sebagai pencacah.</li>
+    <li>Aksi dapat berupa satu atau lebih instruksi.</li>
+    <li>Nilai_akhir harus lebih besar atau sama dengan nilai_awal. Jika nilai_akhir lebih kecil dari nilai_awal, maka badan pengulangan tidak dimasuki. Pada awal pengulangan, pencacah diinisialisasi dengan nilai_akhir. Nilai pencacah secara otomatis berkurang satu setiap kali badan pengulangan tersebut dimasuki, sampai akhirnya nilai pencacah sama dengan nilai_awal. Jumlah pengulangan yang terjadi adalah nilai_awal – nilai_akhir + 1.</li>
+  </ol></p>
+
+  <p><b>B.	Pengulangan While-Do</b></p>
+  <p>Bentuk umum konstruksi While adalah:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+while kondisi do
+    aksi
+    end while
+      </code></pre>
+  </div>
+  <p>Sebelum memasuki badan pengulangan, kondisi diperiksa dulu apakah masih memenuhi (benar) atau sudah tidak memenuhi (salah). Aksi dikerjakan berulang kali selama kondisi masih benar (true). Jika kondisi salah (false), maka badan pengulangan tidak akan dimasuki, yang berarti pengulangan selesai.
+<br>Pengulangan suatu saat harus berhenti. Pengulangan yang tidak pernah berhenti menandakan bahwa ada algoritma yang salah. Pengulangan akan berhenti bila kondisi bernilai false. Agar kondisi berubah menjadi false, maka di dalam badan pengulangan harus ada instruksi yang mengubah nilai kondisi.
+<br>Sekilas antara FOR dan WHILE sama saja kegunaannya. Namun, WHILE memiliki keunggulan yang tidak dimiliki oleh FOR. Pada kasus-kasus di mana jumlah pengulangan diketahui di awal program, WHILE dapat digunakan sebaik penggunaan FOR. Namun, untuk proses yang jumlah pengulangannya tidak dapat ditentukan di awal, hanya struktur WHILE yang dapat digunakan, sebab kondisi pengulangan diperiksa di awal pengulangan. Jadi, meskipun kita tidak mengetahui kapan persisnya WHILE ini berhenti, tapi kita menjamin bahwa jika kondisi bernilai salah, maka pengulangan pasti berhenti.
+</p>
+
+    <p><b>Sintaks Perulangan While di Python</b></p>
+      <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+while expression:
+		statement
+      </code></pre>
+  </div>
+  <p>Keterangan: Perulangan akan terus dijalankan selama ekspresi bernilai True.</p>
+
+  <p><b>Sintaks Perulangan For di Python</b></p>
+      <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+for var in sequence:
+		body of for
+      </code></pre>
+  </div>
+  <p>Keterangan: Perulangan akan terus dijalankan selama sequence belum  berakhir.</p>
+  <p>Perbedaan while dan for adalah For digunakan Ketika kita mengetahui dengan pasti kapan perulangan berhenti, sedangkan while digunakan Ketika kita tidak dapat mengetahui dengan pasti kapan perulangan akan berakhir.</p>
+  
+  <p><b>Nested For</b></p>
+  <P>Nested for atau for bersarang adalah bentuk perulangan for di dalam for. Konsep perulangan bersarang adalah pada setiap perulangan pertama program akan menyelesaikan perulangan yang kedua. Kemudian pada setiap perulangan kedua, program akan menyelesaikan perulangan ketiga, begitu seterusnya. Kemudian perulangan yang lebih luar akan bertambah, mengerjakan perulangan yang lebih dalam lagi mulai dari nilai awalnya dan seterusnya.</P>
+
+  <p><b>Sintaks Nested For di Python</b></p>
+        <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+for i in range () :
+		for j in range () :
+				statement di dalam perulangan kedua
+		statement di dalam perulangan pertama
+      </code></pre>
+  </div>
+
+    <h3>TIPE DATA ARRAY/LIST</h3>
+    <p>Dalam bahasa Python, struktur data yang digunakan untuk menyimpan banyak data dalam satu variable yang paling dasar adalah List. List dapat menyimpan banyak data dengan tipe yang berbeda. 
+    <br>Membuat list sangat sederhana, tinggal memasukkan berbagai nilai yang dipisahkan koma di antara tanda kurung siku. Dibawah ini adalah contoh sederhana pembuatan list dalam bahasa Python.
+    </p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+#Contoh sederhana pembuatan list pada bahasa pemrograman python
+list1 = ['kimia', 'fisika', 1993, 2017]
+list2 = [1, 2, 3, 4, 5 ]
+list3 = ["a", "b", "c", "d"]
+      </code></pre>
+    </div>
+
+    <p><b>Akses Nilai Dalam List Python</b></p>
+    <p>Untuk mengakses nilai dalam list python, gunakan tanda kurung siku untuk mengiris beserta indeks atau indeks untuk mendapatkan nilai yang tersedia pada indeks tersebut.
+    <br>Berikut adalah contoh cara mengakses nilai di dalam list python :
+    </p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+#Cara mengakses nilai di dalam list Python
+list1 = ['fisika', 'kimia', 1993, 2017]
+list2 = [1, 2, 3, 4, 5, 6, 7 ]
+
+print ("list1[0]: ", list1[0])
+print ("list2[1:5]: ", list2[1:5])
+
+Setelah Anda mengeksekusi kode diatas, hasilnya akan seperti dibawah ini :
+list1[0]: fisika list2[1:5]: [2, 3, 4, 5]
+      </code></pre>
+    </div>
+
+    <p><b>Update Nilai Dalam List Python</b></p>
+    <p>Kita dapat memperbarui satu atau beberapa nilai di dalam list dengan memberikan potongan di sisi kiri operator penugasan, dan dapat menambahkan nilai ke dalam list dengan metode append (). 
+      <br>Sebagai contoh:</p>
+        <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+list = ['fisika', 'kimia', 1993, 2017]
+print ("Nilai ada pada index 2 : ", list[2])
+
+list[2] = 2001
+print ("Nilai baru ada pada index 2 : ", list[2])
+      </code></pre>
+    </div>
+
+    <p><b>Hapus Nilai Dalam List Python</b></p>
+    <p>Untuk menghapus nilai di dalam list python, kita dapat menggunakan salah satu pernyataan del jika kita tahu persis elemen yang akan dihapus. Kita dapat menggunakan metode remove() jika tidak tahu persis item mana yang akan dihapus. 
+      <br>Sebagai contoh:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+#Contoh cara menghapus nilai pada list python
+list = ['fisika', 'kimia', 1993, 2017]
+
+print (list)
+del list[2]
+print ("Setelah dihapus nilai pada index 2 : ", list)
+      </code></pre>
+    </div>
+
+    <h2>Instruksi Praktikum</h2>
+    <p>
+      <ol>
+        <li>Dalam setiap pertemuan, praktikum didampingi oleh satu asisten lab. Setiap pertanyaan seputar materi dan pelaksanaan dapat ditanyakan ke asisten lab.</li>
+        <li>Pelajari dengan betul-betul setiap contoh dalam percobaan, apa kegunaan setiap sintaks dan bagaimana jalannya program.</li>
+        <li>Untuk setiap percobaan, tulislah dalam laporan bagaimana alur logikanya, variabel apa yang digunakan dan tipe datanya.</li>
+        <li>Untuk setiap soal latihan dan tugas, jawablah dengan menjelaskan alur logika penyelesaian dan implementasinya dalam program.</li>
+        <li>Susun dalam laporan per bab, dikumpulkan H+7 setelah praktikum. Pengumpulan di google drive akan dinilai langsung oleh Dosen pengampu dibantu Asisten Lab.</li>
+      </ol>
+    </p>
+    <h2>Percobaan</h2>
+    <p><b>Percobaan 1: Menampilkan teks 10x menggunakan while</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="21" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 2: Perulangan menggunakan for dalam sequence</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="22" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 3: Perulangan dengan for</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="23" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 4: Perulangan dengan for bersarang</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="24" class="language-python"></code></pre>
+    </div>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="24a" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 5: Perulangan dengan break</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="25" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 6: Perulangan dengan continue</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="26" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 7: Perulangan dengan variable counter dan variable akumulator</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="27" class="language-python"></code></pre>
+    </div>
+
+    <h2>Latihan</h2>
+    <p><b>Latihan 1. Konversi Nilai Mata Uang</b></p>
+    <p>Buatlah algoritma dan implementasikan dalam program untuk menampilkan konversi uang dari rupiah ke Euro dan Poundsterling dengan menggunakan bentuk perulangan. (Catatan : 1 Euro = Rp 16.592,30 , 1 Poundsterling= Rp 19.267,50 ). 
+    <br>Contoh hasil keluaran program:
+    </p>
+      <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+Rupiah	    Euro	Poundsterling
+=========================================
+10		     ?		  ?
+100		     ?		  ?
+…  		     ?		  ?
+1000000	     ?		  ? 
+=========================================
+      </code></pre>
+    </div>
+
+    <p><b>Latihan 2. Menampilkan tahun kabisat dari tahun 1800–2020 </b></p>
+    <p>Buat program untuk menampikkan tahun kabisat dari tahun 1800–2020 dengan ketentuan tahun kabisat adalah Tahun kabisat adalah tahun yang habis dibagi 4 dan tidak habis dibagi 100, atau tahun yang habis dibagi 400.</p>
+
+    <p><b>Latihan 3: Menjumlahkan Elemen Array</b></p>
+    <p>Buat program untuk menjumlahkan semua elemen dalam sebuah array. <br>Contoh:
+<br>Input: [3, 5, 7, 2, 8]
+<br>Output: 25
+</p>
+
+    <p><b>Latihan 4: Mencari Elemen Tertinggi dan Terendah</b></p>
+    <p>Tuliskan program untuk mencari elemen terbesar dan terkecil dalam sebuah array. <br>Contoh:
+<br>Input: [12, 45, 2, 10, 7]
+<br>Output:
+<br>•	Elemen terbesar: 45
+<br>•	Elemen terkecil: 2
+    </p>
+
+     <p><b>Latihan 5. Menampilkan tahun kabisat dari tahun 1800–2020 </b></p>
+    <p>Buat program yang menghitung berapa kali setiap elemen muncul dalam sebuah array. <br>Contoh:
+<br>Input: [4, 5, 6, 4, 4, 5]
+<br>Output:
+<br>•	4 muncul 3 kali
+<br>•	5 muncul 2 kali
+<br>•	6 muncul 1 kali
+</p>
+
+     <p><b>Latihan 6. Mengurutkan Array </b></p>
+    <p>Tulis program untuk mengurutkan array dalam urutan naik (ascending) dan turun (descending). <br>Contoh:
+<br>Input: [8, 3, 1, 5, 2]
+<br>Output:
+<br>•	Urutan naik: [1, 2, 3, 5, 8]
+<br>•	Urutan turun: [8, 5, 3, 2, 1]
+</p>
+    <h2>Tugas</h2>
+    <p><b>Tugas 1: Mencari nilai rata-rata</b></p>
+    <p>Buatlah algoritma dan implementasikan dalam program untuk memasukkan N buah bilangan dari keyboard, kemudian tampilkan rata-rata dari bilangan-bilangan tersebut!(Catatan : jumlah bilangan (N) dan nilai tiap bilangan diinput dari keyboard).</p>
+
+    <p><b>Tugas 2 : Menampilkan deret bilangan genap</b></p>
+    <p>Buatlah algoritma dan implementasikan dalam program untuk menampilkan deret bilangan genap dari 10 sampai 100 kecuali kelipatan 4. Tampilkan pula jumlah bilangan yang muncul.
+    <br>Contoh tampilan:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+10 14 18 22 26 30 34 38 42 46 50 54 58 62 66 70 74 78 82 86 90 94 98
+Jumlah bilangan genap dari 10 sampai 100 yang bukan kelipatan 4 adalah 23
+      </code></pre>
+    </div>
+
+    <p><b>Tugas 3 : Menampilkan hasil Faktorial</b></p>
+    <p>Buatlah algoritma dan implementasikan dalam program yang menampilkan hasil N faktorial  menggunakan perulangan for.
+    <br>Contoh luaran:
+    </p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+Masukkan bilangan n = 7
+Hasil dari 7 faktorial adalah 5040
+      </code></pre>
+    </div>
+
+    <p><b>Tugas 4: Menampilkan deretan angka</b></p>
+    <p>Buatlah program menggunakan for bersarang untuk menampilkan deretan angka dengan pola berikut:</p>
+    <figure>
+      <img src="images/21.png" alt="register" class="code-image">
+      <figcaption>Gambar 2.1 Buat empat pola ini dengan perulangan bersarang</figcaption>
+    </figure>
+
+    <p><b>Tugas 5: Pasangan Elemen dengan Jumlah Tertentu</b></p>
+    <p>Buat program untuk menemukan semua pasangan elemen dalam array yang jumlahnya sama dengan angka tertentu x. Contoh:
+<br>Input:
+<ul>
+<li>Array: [1, 4, 6, 3, 2, 5, 8]</li>
+<li>x = 7</li>
+</ul>
+Output:
+<ul>
+<li>(1, 6)</li>
+<li>(4, 3)</li>
+<li>(2, 5)</li>
+</ul>
+Catatan: Pastikan solusi tidak menghitung pasangan yang sama dua kali.
+</p>
+
+  <p><b>Tugas 6: Rotasi Array</b></p>
+    <p>Tulis program untuk merotasi sebuah array sebanyak k langkah ke kanan. Contoh:<br>
+Input:
+<ul>
+<li>Array: [1, 2, 3, 4, 5, 6, 7]</li>
+<li>k = 3</li>
+</ul>
+Output: [5, 6, 7, 1, 2, 3, 4]
+    </p>
+
+    <div class="nav-container">
+      <a href="index.html" class="nav-btn">Daftar Bab</a>
+      <a href="bab1.html" class="nav-btn">Bab Sebelumnya</a>
+      <a href="bab3.html" class="nav-btn">Bab Selanjutnya</a>
+    </div>
+
+  </div>
+
+   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script>
+function loadCode(fileName, elementId) {
+  fetch(fileName)
+    .then(res => res.text())
+    .then(code => {
+      const el = document.getElementById(elementId);
+      el.textContent = code;
+      Prism.highlightElement(el);
+    })
+    .catch(err => console.error('Gagal memuat file:', err));
+}
+
+// memuat file langsung dari folder /codes/
+loadCode('codes/21.txt', '21');
+loadCode('codes/22.txt', '22');
+loadCode('codes/23.txt', '23');
+loadCode('codes/24.txt', '24');
+loadCode('codes/25.txt', '25');
+loadCode('codes/26.txt', '26');
+loadCode('codes/27.txt', '27');
+loadCode('codes/24a.txt', '24a');
+  </script>
+</body>
+</html>
