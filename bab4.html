@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Pembelajaran - Bab 4</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+</head>
+<body>
+  <header>
+    <h1>Bab 4. Operasi String dan File</h1>
+  </header>
+
+  <div class="container">
+    <h2>Pokok Bahasan</h2>
+    <p>Pembahasan materi dalam praktikum ini mencakup:</p>
+    <ul>
+      <li>Tipe Data String</li>
+      <li>Manipulasi data String</li>
+      <li>Operasi String</li>
+      <li>Operasi file</li>
+    </ul>
+
+    <h2>Tujuan Praktikum</h2>
+    <p>Dengan terlaksananya praktikum ini mahasiswa diharapkan dapat:</p>
+    <ul>
+      <li>Memahami pengoperasian dan manipulasi data String.</li>
+      <li>Memahami pengoperasian dan manipulasi file.</li>
+    </ul>
+
+    <h2>Dasar Teori</h2>
+    <h3>TIPE DATA STRING</h3>
+    <p>Tipe data string adalah tipe data dalam pemrograman yang digunakan untuk menyimpan kumpulan karakter, angka, tanggal, dan waktu. String dapat menampung banyak karakter sekaligus, biasanya hingga 255 karakter. Penulisan data String di Python dan Javascript, diapit oleh tanda petik.</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+#Contoh penulisan String dengan petik satu
+print('Programming Language')
+
+#Contoh penulisan String dengan petik Dua
+print("Python Dynamic Programming Language")
+
+#Contoh penulisan String menampilkan petik di dalamnya
+print("Andy sedang membawakan acara 'Dies Natalis UWP'")
+print('"Apa yang kamu lakukan?" tanya Ibu.')
+print("Pak Budi sedang melaksanakan sholat Jum'at")
+      </code></pre>
+    </div>
+    <p>Output dari contoh penulisan String di atas adalah sebagai berikut:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+Programming Language
+Python Dynamic Programming Language
+Andy sedang membawakan acara 'Dies Natalis UWP'
+"Apa yang kamu lakukan?" tanya Ibu.
+Pak Budi sedang melaksanakan sholat Jum'at
+      </code></pre>
+    </div>
+
+    <p><b>Mengakses nilai dalam String</b></p>
+    <p>Untuk mengakses substring, caranya sama dengan mengakses tipe data List gunakan tanda kurung siku dan panggil indeks elemennya. Sebagai contoh :.</p>
+       <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+data = 'Python Dynamic Programming Language'
+print(data[3:])
+print(data[:9])
+print(data[-12:-2])
+      </code></pre>
+    </div>
+
+        <p>Output dari contoh akses substring di atas adalah sebagai berikut:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+hon Dynamic Programming Language
+Python Dy
+ing Langua
+      </code></pre>
+    </div>
+
+  <p><b>Karakter Escape Python</b></p>
+    <p>Daftar karakter escape atau karakter non-printable yang dapat diwakili/ditulis dengan awalan notasi backslash, berikut beberapa contohnya.</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+print("Pemrograman Modular \n Pemrograman Dinamis")  #contoh penggunaan Enter (new line)
+print("\t Object oriented programming") #contoh penggunaan tab
+      </code></pre>
+    </div>
+
+    <p>Python memiliki metode built-in untuk memanipulasi string, berikut ini adalah beberapa contohnya.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Metode</th>
+          <th>Penjelasan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>capitalize()</td>
+          <td>Meng-kapitalkan huruf pertama string</td>
+        </tr>
+        <tr>
+          <td>isalnum()</td>
+          <td>Mengembalikan true jika string memiliki minimal 1 karakter dan semua karakternya alfanumerik dan false sebaliknya.</td>
+        </tr>
+        <tr>
+          <td>isalpha()</td>
+          <td>Mengembalikan true jika string memiliki minimal 1 karakter dan semua karakter adalah abjad dan false sebaliknya.</td>
+        </tr>
+        <tr>
+          <td>isdigit()</td>
+          <td>Mengembalikan true jika string hanya berisi digit dan false sebaliknya.</td>
+        </tr>
+        <tr>
+          <td>isupper()</td>
+          <td>Mengembalikan true jika string memiliki setidaknya satu karakter casing dan semua karakter casing ada dalam huruf besar dan false sebaliknya.</td>
+        </tr>
+        <tr>
+          <td>len(string)</td>
+          <td>Mengembalikan panjang string.</td>
+        </tr>
+        <tr>
+          <td>replace(old, new [, max])</td>
+          <td>Menggantikan semua kemunculan lama dalam string dengan kejadian baru atau paling maksimal jika max diberikan.</td>
+        </tr>
+      </tbody>
+    </table>
+
+      <br>
+      <h3>PYTHON FILE HANDLING</h3>
+      <p>Penanganan berkas merupakan bagian penting dari setiap aplikasi web.
+      Python memiliki beberapa fungsi untuk membuat, membaca, memperbarui, dan menghapus berkas.
+      <br>
+      Fungsi utama untuk operasi file di Python adalah fungsi open(). Fungsi open() menggunakan dua parameter, nama berkas dan mode.
+      Ada empat metode (mode) berbeda untuk membuka berkas antara lain:</p>
+
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+"r" - Read - Nilai default. Membuka berkas untuk dibaca, kesalahan jika berkas tidak ada.
+"a" - Append - Membuka berkas untuk ditambahkan, membuat berkas jika tidak ada.
+"w" - Write - Membuka berkas untuk ditulis, membuat berkas jika tidak ada.
+"x" - Create - Membuat berkas yang ditentukan, mengembalikan kesalahan jika berkas ada.
+      </code></pre>
+    </div>
+    <p>Kita dapat menentukan apakah file ditangani sebagai mode biner atau teks:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+"t" - Text - Nilai default. Mode teks.
+"b" - Binary - Mode binari (misal file gambar)
+      </code></pre>
+    </div>
+
+    <p><b>Open File</b></p>
+    <p>Fungsi open() mengembalikan objek file, dan memiliki metode read() untuk membaca isi file. Jika berkas berada di lokasi lain, kita harus menyebutkan letak spesifiknya. Jika file berada dalam folder yang sama dengan file coding, tinggal panggil nama file.</p>
+        <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+file1 = open("D:\\myfiles\welcome.txt")
+print(file1.read())
+
+file2 = open("demofile.txt")
+print(file2.read()) 
+      </code></pre>
+    </div>
+
+    <p>Membuka file menggunakan "with":</p>
+        <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+with open("demofile.txt") as f:
+    print(f.read()) 
+      </code></pre>
+    </div>
+    <p>Dengan menggunakan "with", kita tidak perlu khawatir untuk menutup file, pernyataan with otomatis menutup file.</p>
+
+    <p><b>Close File</b></p>
+    <p>Disarankan untuk selalu menutup berkas setelah selesai digunakan. Jika tidak menggunakan pernyataan with, kita harus menulis pernyataan close untuk menutup berkas:</p>
+        <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+f = open("demofile.txt")
+print(f.readline())
+f.close() 
+      </code></pre>
+    </div>
+
+    <p><b>Write to an Existing File</b></p>
+    <p>Untuk menulis ke berkas yang sudah ada, Anda harus menambahkan parameter ke fungsi open():
+<ul>
+<li>"a" - Tambahkan - akan menambahkan ke akhir berkas</li>
+<li>"w" - Tulis - akan menimpa konten yang sudah ada</li>
+</ul></p>
+
+    <p>Misal kita membuka file "demofile.txt" dan menambahkan isi ke file:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+with open("demofile.txt", "a") as f:
+  f.write("Now the file has more content!")
+
+#open and read the file after the appending:
+with open("demofile.txt") as f:
+  print(f.read()) 
+      </code></pre>
+    </div>
+
+    <p><b>Delete a File</b></p>
+    <p>Untuk menghindari error, kita bisa memeriksa apakah berkas tersebut ada sebelum mencoba menghapusnya:</sp>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+import os
+if os.path.exists("demofile.txt"):
+    os.remove("demofile.txt")
+else:
+    print("The file does not exist") 
+      </code></pre>
+    </div>
+
+    <h2>Instruksi Praktikum</h2>
+    <p>
+      <ol>
+        <li>Dalam setiap pertemuan, praktikum didampingi oleh satu asisten lab. Setiap pertanyaan seputar materi dan pelaksanaan dapat ditanyakan ke asisten lab.</li>
+        <li>Pelajari dengan betul-betul setiap contoh dalam percobaan, apa kegunaan setiap sintaks dan bagaimana jalannya program.</li>
+        <li>Untuk setiap percobaan, tulislah dalam laporan bagaimana alur logikanya, dan bagaimana menggunakan list dan perulangan untuk melakukan operasi matriks.</li>
+        <li>Untuk setiap soal latihan dan tugas, jawablah dengan menjelaskan alur logika penyelesaian dan implementasinya dalam program.</li>
+        <li>Susun dalam laporan per bab, dikumpulkan H+7 setelah praktikum. Pengumpulan di google drive akan dinilai langsung oleh Dosen pengampu dibantu Asisten Lab.</li>
+      </ol>
+    </p>
+    
+    <h2>Percobaan</h2>
+    <p><b>Percobaan 1: Operasi menggabungkan String</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="41" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 2: Mengulang String</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="42" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 3: Mengakses karakter atau substring</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="43" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 4: Mengubah huruf</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="44" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 5: Menghapus spasi atau karakter</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="45" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 6: Mencari dan mengganti karakter</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="46" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 7: Pemisahan dan penggabungan String </b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="47" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 8: Membalik String</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="48" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 9: Menghapus karakter tertentu</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="49" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 10: Menghitung Jumlah Kata dalam File</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="49" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 11: Membalik Isi File ke reverse.txt</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="49" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 12: Menyalin File sumber.txt ke salinan.txt</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="49" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 13: Mencari Berapa Kali Kata Muncul dalam File (materi.txt)</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="49" class="language-python"></code></pre>
+    </div>
+
+    <h2>Latihan</h2>
+    <p><b>Latihan 1. Buat fungsi hitung huruf Kapital</b></p>
+    <p>Buatlah sebuah list yang menyimpan beberapa elemen huruf besar dan kecil, kemudian buat sebuah fungsi untuk menghitung ada berapa huruf besar pada list tersebut.
+    </p>
+
+    <p><b>Latihan 2. Phytagoras</b></p>
+    <p>Buatlah sebuah fungsi untuk mengecek apakah tiga buah bilangan meruapakan phytagoras. Misal diterima angka 3, 5 dan 4 maka susunan angka tersebut adalah phytagoras karena 3<sup>2</sup> + 4<sup>2</sup> = 5<sup>2</sup>.</p>
+
+    <p><b>Latihan 3: Menggabungkan Dua File Teks</b></p>
+    <p>Buat program yang menggabungkan isi dari dua file (file1.txt dan file2.txt) menjadi satu file baru bernama gabungan.txt.
+    </p>
+
+    <p><b>Latihan 4: Membuat Program Log Sederhana</b></p>
+    <p>Buat program yang setiap kali dijalankan menulis waktu dan tanggal sekarang ke file log.txt. (Gunakan mode append).
+    </p>
+
+    <h2>Tugas</h2>
+    <p><b>Tugas 1: Mengecek Palindrom</b></p>
+    <p>Buatlah sebuah program untuk menerima inputan dua buah teks. Kemudian buat fungsi untuk mengecek apakah kedua teks tersebut merupakan Palindrom. Palindrom merupakan sebuah kata, bilangan, frasa, atau susunan karakter lain yang serupa jika dibaca dengan urutan terbalik ataupun tidak, seperti dalam kakak ataupun apa. <br>
+      Contoh: "kasur ini rusak", jika susunan huruf dibalik maka "kasur ini rusak" (artinya ini adalah Palindrom).
+    </p>
+
+    <p><b>Tugas 2: Hitung kata</b></p>
+    <p>Buatlah sebuah program untuk menerima parameter berupa string, kemudian menghitung jumlah kata dalam string (kata dipisahkan oleh spasi).</p>
+
+    <p><b>Tugas 3: Hitung frekuensi karakter terbanyak</b></p>
+    <p>Buatlah sebuah program untuk menghitung karakter yang paling sering muncul dalam string. Jika ada beberapa karakter dengan jumlah kemunculan yang sama, maka tampilkan yang muncul pertama kali dalam string.
+    </p>
+
+    <p><b>Tugas 4: Menghapus Baris Tertentu dalam File</b></p>
+    <p>Buat program yang membaca data.txt, menghapus baris nomor tertentu (misal baris ke-3), lalu menulis ulang file hasilnya.</p>
+
+    <p><b>Tugas 5: Parsing File CSV Sederhana</b></p>
+    <p>Diberikan file nilai.csv yang berisi:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+Nama,Nilai
+Andi,80
+Budi,90
+Cici,70
+      </code></pre>
+    </div>
+    <p>Buat program yang membaca file CSV tersebut dan menampilkan daftar nama mahasiswa yang nilainya di atas 75.</p>
+
+    <div class="nav-container">
+      <a href="index.html" class="nav-btn">Daftar Bab</a>
+      <a href="bab2.html" class="nav-btn">Bab Sebelumnya</a>
+      <a href="bab4.html" class="nav-btn">Bab Selanjutnya</a>
+    </div>
+
+  </div>
+
+   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script>
+function loadCode(fileName, elementId) {
+  fetch(fileName)
+    .then(res => res.text())
+    .then(code => {
+      const el = document.getElementById(elementId);
+      el.textContent = code;
+      Prism.highlightElement(el);
+    })
+    .catch(err => console.error('Gagal memuat file:', err));
+}
+
+// memuat file langsung dari folder /codes/
+loadCode('codes/31.txt', '31');
+loadCode('codes/32.txt', '32');
+loadCode('codes/33.txt', '33');
+loadCode('codes/34.txt', '34');
+loadCode('codes/35.txt', '35');
+  </script>
+</body>
+</html>
