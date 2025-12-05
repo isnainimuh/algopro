@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Pembelajaran - Bab 5</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+</head>
+<body>
+  <header>
+    <h1>Bab 5. Operasi String dan File</h1>
+  </header>
+
+  <div class="container">
+    <h2>Pokok Bahasan</h2>
+    <p>Pembahasan materi dalam praktikum ini mencakup:</p>
+    <ul>
+      <li>Definisi Fungsi </li>
+      <li>Fungsi tanpa return value</li>
+      <li>Fungsi dengan return value</li>
+    </ul>
+
+    <h2>Tujuan Praktikum</h2>
+    <p>Dengan terlaksananya praktikum ini mahasiswa diharapkan dapat:</p>
+    <ul>
+      <li>Mengenal apa itu function dan kegunaannya.</li>
+      <li>Mampu membuat function sesuai kebutuhan.</li>
+      <li>Mampu menerapkan pemrograman modular.</li>
+    </ul>
+
+    <h2>Dasar Teori</h2>
+    <h3>KONSEP PEMROGRAMAN MODULAR</h3>
+    <p>Pemrograman modular adalah sebuah program yang terdiri dari beberapa modul atau subprogram. Ide utama dari pemrograman modular adalah membagi sebuah program yang kompleks ke dalam beberapa subprogram/modul yang lebih sederhana yang saling terkait satu dengan yang lain. Pemrograman modular memiliki beberapa manfaat diantaranya menyederhanakan pemrograman yang kompleks menjadi modul-modul sederhana, menghindari penulisan kode yang sama berulang-ulang, memudahkan pelacakan kesalahan, dan modifikasi dapat dilakukan tanpa mengganggu program keseluruhan. Modul atau subprogram dapat juga disebut sebagai fungsi atau prosedur.</p>
+      <figure>
+      <img src="images/51.png" alt="register" class="code-image">
+      <figcaption>Gambar 5.1 Pemrograman Modular.</figcaption>
+    </figure>
+
+
+    <p><b>Definisi Fungsi</b></p>
+    <p>Fungsi merupakan bagian dari kode program yang terpisah dari program utama. Bagain kode program apat dipanggil pada program utama dan ini di-execute jika diperlukan untuk melakukan tindakan khusus dalam program. Fungsi dibedakan menjadi user-define function (didefinisikan sendiri) dan built-in function (disediakan oleh compiler).
+<br>Deklarasi fungsi di python menggunakan kata kunci def.
+</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+def namaFungsi (daftar parameter):
+		blok kode program fungsi
+      </code></pre>
+    </div>
+
+    <p><b>Fungsi tanpa nilai balik</b></p>
+    <p>Terdapat dua macam fungsi yaitu fungsi dengan nilai kembalian (mengembalikan nilai ke pemanggil) atau fungsi tanpa nilai kembalian (return value). Berikut ini adalah contoh fungsi tanpa return value.</p>
+       <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+def cetak():
+    print("Welcome to Python Jungle")
+
+#memanggil fungsi di program utama
+cetak()
+      </code></pre>
+    </div>
+
+    <p><b>Fungsi dengan nilai balik</b></p>
+    <p>Fungsi ini berguna untuk melakukan suatu proses yang dapat mengembalikan sebuah nilai ke pemanggilnya. Berikut ini adalah contohnya:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+def cetak():
+    return "Welcome to Python Jungle"
+
+#memanggil fungsi di program utama
+x=cetak()
+print(x)
+      </code></pre>
+    </div>
+    <p>Perbedaan mendasar pada fungsi yang memiliki nilai balik adalah fungsi ini memakai sintaks return untuk mengirim value atau nilai ke pemanggilnya, sedangkan fungsi tanpa return value hanya mengeksekusi statement di dalamnya tanpa me-return nilai.</p>
+
+  <p><b>Parameter Fungsi</b></p>
+    <p>Parameter atau argument dalam fungsi digunakan untuk mengirim nilai dari program pemanggil ke dalam fungsi. Parameter ditulis Ketika parameter tersebut akan diolah di dalam fungsi. Contoh:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+def penjumlahan(a, b):
+    hasil = a + b
+    return hasil
+
+#memanggil fungsi di program utama
+print(penjumlahan(9, 17))
+      </code></pre>
+    </div>
+
+    <p>Catatan:<br>
+  <ul>
+    <li>Jika kita tidak mengetahui berapa banyak keyword argumen yang ada, tambahkan dua tanda bintang: ** sebelum nama parameter dalam definisi fungsi.</li>
+    <li>Dengan cara ini fungsi tersebut akan menerima kamus argumen, dan dapat mengakses item yang sesuai.</li>
+    <li>Di Python kita dapat mengeset nilai default untuk sebuah parameter fungsi, sehingga Ketika kita memanggil fungsi tanpe mendefinisikan parameternya, maka program akan mengambil parameter default.</li>
+    <li>Kita dapat mengirim tipe data apa pun dari argumen ke suatu fungsi (string, angka, list, tupple, dll.) dan itu akan diperlakukan sebagai tipe data yang sama di dalam fungsi.</li>
+  </ul>
+    </p>
+
+    <p><b>Keyword *args dan **kwargs di Python</b></p>
+    <p>Keyword *args dan **kwargs di Python adalah sintaks khusus yang memungkinkan fungsi menerima sejumlah argumen variabel, membuat fungsi lebih fleksibel; *args mengemas argumen posisional tanpa kata kunci menjadi sebuah tuple, sedangkan **kwargs mengemas argumen kata kunci (keyword) menjadi sebuah dictionary (kamus), dengan * untuk args dan ** untuk kwargs, dan keduanya bisa diganti namanya.</p>
+    <p>*args (Argumen Posisi Variabel)
+      <ul>
+        <li>Berfungsi menerima sejumlah argumen posisi (non-keyword) yang tidak diketahui jumlahnya.</li>
+        <li>Luarannya berupa argumen yang dikemas menjadi tuple di dalam fungsi.</li>
+      </ul>
+    </p>
+    <p>**kwargs (Argumen Kata Kunci Variabel)
+      <ul>
+        <li>Berfungsi menerima sejumlah argumen kata kunci (keyword arguments) yang tidak diketahui jumlahnya.</li>
+        <li>Argumen tersebut dikemas menjadi dictionary di dalam fungsi, di mana key adalah nama argumen dan value adalah nilainya.</li>
+      </ul>
+    </p>
+    <p>Urutan dan Penggunaan<br>
+    <ul>
+      <li>Urutan dalam definisi fungsi adalah: argumen wajib, *args, lalu **kwargs.</li>
+      <li>Kita bisa menggunakan keduanya bersamaan dalam satu fungsi untuk fleksibilitas maksimum, misalnya: def fungsi_lengkap(arg_wajib, *args, **kwargs).</li>
+      <li>Nama args dan kwargs bersifat konvensional, kita bisa menggantinya dengan nama lain selama tanda bintang (* atau **) tetap ada, contoh: def fungsi(*param_posisi, **param_keyword).</li>
+    </ul>
+    </p>
+
+
+
+    <h2>Instruksi Praktikum</h2>
+    <p>
+      <ol>
+        <li>Dalam setiap pertemuan, praktikum didampingi oleh satu asisten lab. Setiap pertanyaan seputar materi dan pelaksanaan dapat ditanyakan ke asisten lab.</li>
+        <li>Pelajari dengan betul-betul setiap contoh dalam percobaan, apa kegunaan setiap sintaks dan bagaimana jalannya program.</li>
+        <li>Untuk setiap percobaan, tulislah dalam laporan bagaimana alur logikanya.</li>
+        <li>Untuk setiap soal latihan dan tugas, jawablah dengan menjelaskan alur logika penyelesaian dan implementasinya dalam program.</li>
+        <li>Susun dalam laporan per bab, dikumpulkan H+7 setelah praktikum. Pengumpulan di google drive akan dinilai langsung oleh Dosen pengampu dibantu Asisten Lab.</li>
+      </ol>
+    </p>
+    
+    <h2>Percobaan</h2>
+    <p><b>Percobaan 1: Membuat fungsi hitung volume kerucut dan bola tanpa return value</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="51" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 2: Membuat fungsi hitung factorial dengan return value</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="52" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 3: Fungsi dengan parameter default</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="53" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 4: Fungsi dengan parameter berupa list</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="54" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 5: Contoh Dasar *args (menerima banyak argumen)</b></p>
+    <p>*args digunakan ketika jumlah argumen tidak pasti.</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="55" class="language-python"></code></pre>
+    </div>
+    <p>args berupa tuple dari semua input dan bisa menerima argumen sebanyak apa pun.</p>
+
+    <p><b>Percobaan 6: Contoh Dasar **kwargs (menerima argumen dengan key=value)</b></p>
+    <p>**kwargs digunakan untuk argumen dinamis berbentuk pasangan kunci–nilai.</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="56" class="language-python"></code></pre>
+    </div>
+    <p>kwargs berupa dictionary, cocok untuk konfigurasi atau parameter opsional.</p>
+
+    <p><b>Percobaan 7: Menggabungkan *args dan **kwargs dalam satu fungsi</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="57" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 8: Contoh Fungsi Real Kalkulator Serbaguna</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="58" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 9: Contoh Penggunaan **kwargs untuk Konfigurasi Fungsi</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="59" class="language-python"></code></pre>
+    </div>
+
+    <h2>Latihan</h2>
+    <p><b>Latihan 1. Buat fungsi hitung huruf Kapital</b></p>
+    <p>Buatlah sebuah list yang menyimpan beberapa elemen huruf besar dan kecil, kemudian buat sebuah fungsi untuk menghitung ada berapa huruf besar pada list tersebut.
+    </p>
+
+    <p><b>Latihan 2. Phytagoras</b></p>
+    <p>Buatlah sebuah fungsi untuk mengecek apakah tiga buah bilangan meruapakan phytagoras. Misal diterima angka 3, 5 dan 4 maka susunan angka tersebut adalah phytagoras karena 3<sup>2</sup> + 4<sup>2</sup> = 5<sup>2</sup>.</p>
+
+    <p><b>Latihan 3: Cek Bilangan Genap/Ganjil</b></p>
+    <p>Buat fungsi cek_angka(n) yang mengembalikan "Genap" jika n genap, selain itu "Ganjil".
+    </p>
+
+    <p><b>Latihan 4: Menghitung Rata-rata</b></p>
+    <p>Buat fungsi rata_rata(*angka) yang menerima banyak angka dan mengembalikan nilai rata-ratanya.
+    </p>
+
+    <p><b>Fungsi dengan Default Parameter</b></p>
+    <p>Buat fungsi salam(pesan="Selamat pagi") yang menampilkan pesan salam.
+Jika pengguna memberikan argumen lain, pakai argumen tersebut.</p>
+
+    <h2>Tugas</h2>
+    <p><b>Tugas 1. Fungsi Rekursif Faktorial</b></p>
+    <p>Buat fungsi rekursif faktorial(n) untuk menghitung n!</p>
+
+    <p><b>Tugas 2. Fungsi dengan Default Parameter</b></p>
+    <p>Buat fungsi salam(pesan="Selamat pagi") yang menampilkan pesan salam.
+Jika pengguna memberikan argumen lain, pakai argumen tersebut.</p>
+
+    <p><b>Tugas 3. Fungsi dengan **kwargs</b></p>
+    <p>Buat fungsi info_mahasiswa(**data) yang menampilkan pasangan key-value, seperti:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+nama = Indah
+nim = 12345
+prodi = Informatika
+      </code></pre>
+    </div>
+
+    <p><b>Tugas 4. Fungsi Mengembalikan Lebih dari Satu Nilai</b></p>
+    <p>Buat fungsi operasi(a, b) yang mengembalikan nilai penjumlahan, pengurangan, dan perkalian.</p>
+
+    <p><b>Tugas 5. Higher-Order Function (fungsi sebagai argumen)</b></p>
+    <p>Buat fungsi:</p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code class="language-python">
+def jalankan(f, x):
+    return f(x)
+      </code></pre>
+    </div>
+    <p>Lalu gunakan fungsi tersebut dengan fungsi lain, misalnya:
+jalankan(abs, -10) --> menghasilkan 10.</p>
+
+    <div class="nav-container">
+      <a href="index.html" class="nav-btn">Daftar Bab</a>
+      <a href="bab4.html" class="nav-btn">Bab Sebelumnya</a>
+      <a href="bab6.html" class="nav-btn">Bab Selanjutnya</a>
+    </div>
+
+  </div>
+
+   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script>
+function loadCode(fileName, elementId) {
+  fetch(fileName)
+    .then(res => res.text())
+    .then(code => {
+      const el = document.getElementById(elementId);
+      el.textContent = code;
+      Prism.highlightElement(el);
+    })
+    .catch(err => console.error('Gagal memuat file:', err));
+}
+
+// memuat file langsung dari folder /codes/
+loadCode('codes/51.txt', '51');
+loadCode('codes/52.txt', '52');
+loadCode('codes/53.txt', '53');
+loadCode('codes/54.txt', '54');
+loadCode('codes/55.txt', '55');
+loadCode('codes/56.txt', '56');
+loadCode('codes/57.txt', '57');
+loadCode('codes/58.txt', '58');
+loadCode('codes/59.txt', '59');
+  </script>
+</body>
+</html>
