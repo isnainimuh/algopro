@@ -1,0 +1,2 @@
+s = "Python "
+print(s * 3)  # Output: Python Python Python

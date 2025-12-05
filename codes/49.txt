@@ -1,0 +1,6 @@
+s = "hello world"
+print(s.replace("o", ""))  # Output: hell wrld
+
+# Menggunakan translate
+table = str.maketrans("", "", "aeiou")  # Menghapus huruf vokal
+print(s.translate(table))  # Output: hll wrld

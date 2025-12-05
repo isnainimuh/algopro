@@ -1,0 +1,5 @@
+s = "hello world"
+print(s.upper())      # Output: HELLO WORLD
+print(s.lower())      # Output: hello world
+print(s.title())      # Output: Hello World
+print(s.capitalize()) # Output: Hello world

@@ -1,0 +1,4 @@
+s = "  hello world  "
+print(s.strip())   # Output: hello world
+print(s.lstrip())  # Output: hello world  
+print(s.rstrip())  # Output:   hello world

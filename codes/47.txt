@@ -1,0 +1,6 @@
+s = "apple,banana,cherry"
+fruits = s.split(",")   # Memisahkan string menjadi list
+print(fruits)           # Output: ['apple', 'banana', 'cherry']
+
+result = ", ".join(fruits)  # Menggabungkan list menjadi string
+print(result)               # Output: apple, banana, cherry

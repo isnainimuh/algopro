@@ -1,0 +1,11 @@
+def balik_file(file_asal, file_tujuan):
+    with open(file_asal, "r", encoding="utf-8") as f:
+        baris = f.readlines()
+
+    baris_terbalik = baris[::-1]  # membalik urutan list
+
+    with open(file_tujuan, "w", encoding="utf-8") as f:
+        f.writelines(baris_terbalik)
+
+balik_file("data.txt", "reverse.txt")
+print("File berhasil dibalik!")

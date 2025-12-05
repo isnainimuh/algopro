@@ -1,0 +1,9 @@
+def salin_file(sumber, tujuan):
+    with open(sumber, "r", encoding="utf-8") as f_sumber:
+        isi = f_sumber.read()
+
+    with open(tujuan, "w", encoding="utf-8") as f_tujuan:
+        f_tujuan.write(isi)
+
+salin_file("sumber.txt", "salinan.txt")
+print("Penyalinan selesai!")

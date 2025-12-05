@@ -1,0 +1,4 @@
+s = "hello world"
+print(s.find("world"))    # Output: 6 (posisi substring "world")
+print(s.replace("world", "Python")) # Output: hello Python
+print(s.count("l"))       # Output: 3 (jumlah kemunculan "l")

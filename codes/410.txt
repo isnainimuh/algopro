@@ -1,0 +1,7 @@
+def hitung_kata(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        isi = f.read()
+    kata = isi.split()
+    return len(kata)
+
+print("Jumlah kata:", hitung_kata("artikel.txt"))

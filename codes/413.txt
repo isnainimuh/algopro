@@ -1,0 +1,11 @@
+def cari_kata(filename, kata_cari):
+    with open(filename, "r", encoding="utf-8") as f:
+        isi = f.read().lower()
+
+    kata_cari = kata_cari.lower()
+    kata_list = isi.split()
+    jumlah = kata_list.count(kata_cari)
+    return jumlah
+
+kata = input("Masukkan kata yang dicari: ")
+print("Jumlah kemunculan:", cari_kata("materi.txt", kata))
