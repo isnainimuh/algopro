@@ -129,3 +129,29 @@ figcaption {
   color: #555;
   margin-top: 5px;
 }
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #003976;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
