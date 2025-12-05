@@ -1,0 +1,8 @@
+def jumlahkan(*args):
+    total = 0
+    for angka in args:
+        total += angka
+    return total
+
+print(jumlahkan(1, 2, 3))          # 6
+print(jumlahkan(10, 20, 30, 40))   # 100

@@ -1,0 +1,5 @@
+def tampilkan_data(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} = {value}")
+
+tampilkan_data(nama="Isnaini", umur=36, pekerjaan="Dosen")

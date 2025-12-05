@@ -1,0 +1,10 @@
+def buat_user(**kwargs):
+    defaults = {
+        "nama": "Tidak diketahui",
+        "umur": 0,
+        "aktif": True
+    }
+    defaults.update(kwargs)
+    return defaults
+
+print(buat_user(nama="Eko", aktif=False))

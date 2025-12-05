@@ -1,0 +1,13 @@
+def kalkulator(operasi, *args):
+    if operasi == "tambah":
+        return sum(args)
+    elif operasi == "kali":
+        hasil = 1
+        for a in args:
+            hasil *= a
+        return hasil
+    else:
+        return "Operasi tidak dikenal"
+
+print(kalkulator("tambah", 1, 2, 3))   # 6
+print(kalkulator("kali", 2, 3, 4))     # 24

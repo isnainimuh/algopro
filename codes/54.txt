@@ -1,0 +1,9 @@
+def maksimum(data):
+    maks = data[0]
+    for i in data:
+        if maks < i:
+            maks = i
+    print("Nilai maksimum: ", maks)
+
+tinggi = [171, 180, 175, 167, 175, 181]
+maksimum(tinggi)

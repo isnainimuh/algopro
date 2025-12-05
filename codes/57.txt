@@ -1,0 +1,5 @@
+def demo(*args, **kwargs):
+    print("ARGS:", args)
+    print("KWARGS:", kwargs)
+
+demo(1, 2, 3, nama="Isnaini", status="Dosen")

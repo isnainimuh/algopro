@@ -1,0 +1,14 @@
+def volume_kerucut():
+    print("Volume kerucut")
+    r=int(input("Masukkan jari2: "))
+    t=int(input("Masukkan t: "))
+    print("Volume kerucut: ", 3.14*r*r*t/3)
+
+def volume_bola():
+    print("Volume bola")
+    r=int(input("Masukkan nilai r= "))
+    print("Volume bola= ", 4*3.14*r*r*r/3)
+
+#memanggil fungsi di program utama
+volume_kerucut()
+volume_bola()

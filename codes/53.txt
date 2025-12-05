@@ -1,0 +1,6 @@
+def negaraku(negara="Indonesia"):
+    print("Saya dari ", negara)
+
+negaraku("Malaysia")
+negaraku("Singapore")
+negaraku() #jika tidak diisi maka mengambil nilai default
