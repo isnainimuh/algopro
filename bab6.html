@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Pembelajaran - Bab 6</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+</head>
+<body>
+  <header>
+    <h1>Bab 6. Algoritma Searching</h1>
+  </header>
+
+  <div class="container">
+    <h2>Pokok Bahasan</h2>
+    <p>Pembahasan materi dalam praktikum ini mencakup:</p>
+    <ul>
+      <li>Algoritma Searching</li>
+      <li>Linier Search</li>
+      <li>Binary Search</li>
+      <li>Fungsi bisect di Python</li>
+    </ul>
+
+    <h2>Tujuan Praktikum</h2>
+    <p>Dengan terlaksananya praktikum ini mahasiswa diharapkan dapat:</p>
+    <ul>
+      <li>Mengenal apa itu algoritma searching dan kegunaannya.</li>
+      <li>Mengenal teknik dasar algoritma pencarian: linear dan binary.</li>
+      <li>Mampu mengimplementasikan algoritma searching yang sesuai dalam berbagai macam situasi.</li>
+    </ul>
+
+    <h2>Dasar Teori</h2>
+    <h3>ALGORITMA SEARCHING</h3>
+    <p>Algoritma pencarian adalah teknik penting dalam ilmu komputer yang digunakan untuk menemukan suatu data tertentu di dalam sebuah kumpulan data. Pada tutorial ini, kita akan fokus pada proses pencarian di dalam sebuah array. Ketika kita ingin mencari suatu nilai di dalam array, ada dua algoritma yang paling sering digunakan, tergantung pada jenis array yang digunakan.</p>
+    <figure>
+      <img src="images/61.png" alt="register" class="code-image">
+      <figcaption>Gambar 6.1 Jenis Algoritma Searching.</figcaption>
+    </figure>
+
+    <h3>LINEAR SEARCH</h3>
+    <p>Linear search merupakan algoritma pencarian paling sederhana yang memeriksa setiap elemen secara berurutan hingga key ditemukan atau data koleksi telah ditelusuri seluruhnya. Algoritma ini berfungsi pada data yang telah diurutkan maupun yang belum diurutkan. 
+Cara kerjanya adalah membandingkan nilai yang dicari dengan setiap elemen dalam array satu per satu.
+Waktu yang dibutuhkan bersifat linear, yaitu O(n). Space yang dibutuhkan bersifat linear, yaitu O(1).
+</p>
+<p>Dalam Pencarian Linear, kita melakukan iterasi pada semua elemen array dan memeriksa apakah elemen saat ini sama dengan elemen target. Jika ditemukan elemen yang sama dengan elemen target, maka program akan mengembalikan indeks elemen saat ini. Jika tidak ada elemen yang sama dengan elemen target, maka program akan mengembalikan -1 karena elemen tersebut tidak ditemukan. Pencarian linear juga dikenal sebagai pencarian sekuensial.</p>
+
+<p><b>Applications of Linear Search Algorithm</b></p>
+<p>
+  <ul>
+    <li><b>Unsorted Lists:</b> ketika kita memiliki array/list tak terurut, pencarian linear paling umum digunakan untuk menemukan elemen dalam koleksi.</li>
+    <li><b>Small Data Sets: </b>pencarian linear lebih disukai daripada pencarian biner ketika kita memiliki kumpulan data skala kecil.</li>
+    <li><b>Searching Linked Lists:</b> dalam implementasi linked list, pencarian linear umumnya digunakan untuk menemukan elemen dalam daftar. Setiap simpul diperiksa secara berurutan hingga elemen yang diinginkan ditemukan.</li>
+    <li><b>Simple Implementation: </b>pencarian linear jauh lebih mudah dipahami dan diimplementasikan dibandingkan dengan pencarian biner atau pencarian terner.</li>
+  </ul>
+</p>
+
+<p><b>Advantages of Linear Search Algorithm</b></p>
+<p>
+  <ul>
+    <li>Pencarian linear dapat digunakan terlepas dari apakah array diurutkan atau tidak. Pencarian linear dapat digunakan pada array dengan tipe data apa pun.</li>
+    <li>Tidak memerlukan memori tambahan.</li>
+    <li>Algoritma ini sangat cocok untuk kumpulan data kecil.</li>
+  </ul>
+</p>
+
+<p><b>Disadvantages of Linear Search Algorithm</b></p>
+<p>
+  <ul>
+    <li>Pencarian linear memiliki kompleksitas waktu O(N), yang membuatnya lambat untuk kumpulan data besar.</li>
+    <li>Tidak cocok untuk data array skala besar.</li>
+  </ul>
+</p>
+
+<p><b>When to use Linear Search Algorithm?</b></p>
+<p>
+  <ul>
+    <li>Ketika berurusan dengan kumpulan data kecil.</li>
+    <li>Ketika kita mencari kumpulan data yang tersimpan dalam memori yang bersebelahan.</li>
+  </ul>
+</p>
+
+    <h3>BINARY SEARCH</h3>
+    <p>Digunakan untuk array yang sudah berurutan (sorted).
+Algoritma ini membandingkan elemen tengah dari array terlebih dahulu. 
+<ul>
+  <li>Jika elemen tengah sama dengan nilai yang dicari, pencarian selesai.</li>
+  <li>Jika nilai yang dicari lebih kecil dari elemen tengah, pencarian dilanjutkan ke bagian kiri array.</li>
+  <li>Jika lebih besar, pencarian dilakukan di bagian kanan.</li>
+</ul>
+Algoritma ini lebih cepat daripada linear search dan memiliki waktu pencarian O(log n).</p>
+
+<p><b>How to Implement Binary Search Algorithm?</b></p>
+<p>Algoritma Pencarian Biner dapat diimplementasikan dengan dua cara berikut:<br>
+<ul>
+  <li>Iterative Binary Search Algorithm</li>
+  <li>Recursive Binary Search Algorithm</li>
+</ul></p>
+
+<p><b>Complexity Analysis of Binary Search Algorithm</b></p>
+<p><b>Time Complexity: </b>
+  <ul>
+    <li>Best Case: O(1)</li>
+    <li>Average Case: O(log N)</li>
+    <li>Worst Case: O(log N)</li>
+  </ul>
+  <b>Auxiliary Space:</b> O(1), jika tumpukan panggilan rekursif dihitung maka space menjadi O(log N).
+</p>
+
+<p><b>Applications of Binary Search Algorithm</b></p>
+<p><ul>
+  <li>Pencarian dalam array terurut.</li>
+  <li>Menemukan kemunculan pertama/terakhir atau kecocokan terdekat dalam array terurut.</li>
+  <li>Pengindeksan basis data, digunakan dalam B-tree dan struktur serupa untuk pencarian data yang cepat.</li>
+  <li>Debugging dalam kontrol versi, alat seperti git bisect menggunakan pencarian biner untuk mengisolasi commit yang salah.</li>
+  <li>Perutean jaringan & pencarian IP, menemukan entri perutean secara efisien dalam tabel yang diurutkan berdasarkan rentang alamat.</li>
+  <li>Sistem berkas & pustaka, pencarian cepat melalui direktori terurut atau tabel simbol.</li>
+  <li>Game/grafis, deteksi tabrakan atau ray tracing menggunakan data spasial terurut.</li>
+  <li>Penyetelan pembelajaran mesin — Pencarian hiperparameter yang efisien (misalnya, laju pembelajaran, ambang batas).</li>
+  <li>Masalah optimasi & pemrograman kompetitif — Memecahkan tantangan nilai batas dengan mempersempit ruang pencarian.</li>
+  <li>Struktur data lanjutan: pohon pencarian biner, BST penyeimbang mandiri, dan cascading fraksional bergantung pada logika pencarian.</li>
+</ul></p>
+
+    <h3>Bisect Algorithm Functions in Python</h3>
+    <p>Modul bisect dalam Python menyediakan fungsi sederhana dan cepat (berbasis pencarian biner) untuk mencari elemen dalam daftar yang diurutkan, menemukan posisi yang tepat untuk menyisipkan elemen baru, dan menyisipkan elemen baru yang memastikan bahwa daftar tersebut tetap terurut.</p>
+
+    <p><b>Why do we need Bisect Module ?</b></p>
+    <p>
+      <ol>
+        <li>Berguna untuk operasi pencarian biner, yaitu mencari dalam daftar terurut dan menemukan titik penyisipan.</li>
+        <li>Menyediakan metode yang efisien untuk menyisipkan elemen ke dalam daftar terurut dengan tetap menjaga urutannya.</li>
+        <li>Menghindari kebutuhan pengurutan manual setelah setiap penyisipan, sehingga menghemat waktu dan tenaga.</li>
+        <li>Menawarkan fungsi seperti bisect(), bisect_left(), bisect_right(), dan insort() untuk kode yang bersih dan optimal.</li>
+        <li>Ideal untuk tugas-tugas seperti mengelola papan peringkat, data berperingkat, atau skenario apa pun yang melibatkan penyisipan/pencarian data terurut.</li>
+      </ol>
+    </p>
+
+    <p><b>Core Functions of Bisect Module</b></p>
+    <p><ul>
+      <li>Finding the insertion point (without insertion): Percobaan 7</li>
+      <li>Inserting elements at the correct position: Percobaan 8</li>
+    </ul></p>
+
+    <p><b>Finding Insertion Points</b></p>
+    <p>Fungsi-fungsi ini mengembalikan indeks tempat elemen baru harus disisipkan agar daftar tetap terurut.<br>
+      <b>bisect.bisect(): </b>mengembalikan titik penyisipan paling kanan untuk elemen. Jika elemen sudah ada, titik penyisipan akan berada setelah entri yang ada.<br>
+      <div class="code-container">
+      <pre><code class="language-python">bisect.bisect(list, num, beg=0, end=len(list))</code></pre>
+      </div>
+      <b>Parameter:</b>
+      <ul>
+        <li>list: Sorted list</li>
+        <li>num: Element to insert.</li>
+        <li>beg: Start index for searching (optional).</li>
+        <li>end: End index for searching (optional).</li>
+      </ul>
+      <br>
+      <b>bisect.bisect_left(): </b>Mengembalikan titik penyisipan paling kiri untuk elemen. Jika elemen tersebut ada, titik penyisipan akan berada sebelum entri yang ada.<br>
+      <div class="code-container">
+      <pre><code class="language-python">bisect.bisect_left(list, num, beg=0, end=len(list))</code></pre>
+      </div>
+      <b>bisect.bisect_right(): </b>Identik dengan bisect.bisect(), mengembalikan titik penyisipan paling kanan.<br>
+      <div class="code-container">
+      <pre><code class="language-python">bisect.bisect_right(list, num, beg=0, end=len(list))</code></pre>
+      </div>
+    </p>
+
+    <p><b>Inserting Elements</b></p>
+    <p>Fungsi ini menyisipkan elemen pada posisi yang tepat untuk mempertahankan penyortiran.<br>
+      <b>bisect.insort(): </b>Memasukkan elemen di posisi paling kanan. Tidak seperti fungsi bisect(), fungsi ini sebenarnya memodifikasi daftar dengan memasukkan elemen.<br>
+      <div class="code-container">
+      <pre><code class="language-python">bisect.insort(list, num, beg=0, end=len(list))</code></pre>
+      </div>
+      <b>Parameter:</b>
+      <ul>
+        <li>list: Sorted list</li>
+        <li>num: Element to insert.</li>
+        <li>beg: Start index for searching (optional).</li>
+        <li>end: End index for searching (optional).</li>
+      </ul>
+      <br>
+      <b>bisect.insort_left(): </b>Menyisipkan elemen pada posisi paling kiri.<br>
+      <div class="code-container">
+      <pre><code class="language-python">bisect.insort_left(list, num, beg=0, end=len(list))</code></pre>
+      </div>
+      <b>bisect.insort_right(): </b>Menyisipkan elemen pada posisi paling kanan (mirip dengan insort()).<br>
+      <div class="code-container">
+      <pre><code class="language-python">bisect.insort_right(list, num, beg=0, end=len(list))</code></pre>
+      </div>
+    </p>
+
+
+    <h2>Instruksi Praktikum</h2>
+    <p>
+      <ol>
+        <li>Dalam setiap pertemuan, praktikum didampingi oleh satu asisten lab. Setiap pertanyaan seputar materi dan pelaksanaan dapat ditanyakan ke asisten lab.</li>
+        <li>Pelajari dengan betul-betul setiap contoh dalam percobaan, apa kegunaan setiap sintaks dan bagaimana jalannya program.</li>
+        <li>Untuk setiap percobaan, tulislah dalam laporan bagaimana alur logikanya.</li>
+        <li>Untuk setiap soal latihan dan tugas, jawablah dengan menjelaskan alur logika penyelesaian dan implementasinya dalam program.</li>
+        <li>Susun dalam laporan per bab, dikumpulkan H+7 setelah praktikum. Pengumpulan di google drive akan dinilai langsung oleh Dosen pengampu dibantu Asisten Lab.</li>
+      </ol>
+    </p>
+    
+    <h2>Percobaan</h2>
+    <p><b>Percobaan 1: Implementasi Algoritma Linear Search</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="61" class="language-python"></code></pre>
+    </div>
+    <p><b>Output Program:</b></p>
+    <div class="code-container">
+      <pre><code class="language-python">Element is present at index 3</code></pre>
+    </div>
+
+    <p><b>Percobaan 2: Implementasi Algoritma Binary Search</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="62" class="language-python"></code></pre>
+    </div>
+    <p><b>Output Program:</b></p>
+    <div class="code-container">
+      <pre><code class="language-python">Element is present at index 3</code></pre>
+    </div>
+
+    <p><b>Percobaan 3: Iterative Binary Search Algorithm: O(log n) Time and O(1) Space</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="63" class="language-python"></code></pre>
+    </div>
+    <p><b>Output Program:</b></p>
+    <div class="code-container">
+      <pre><code class="language-python">Element is present at index 3</code></pre>
+    </div>
+
+    <p><b>Percobaan 4: Recursive Binary Search Algorithm</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="64" class="language-python"></code></pre>
+    </div>
+    <p><b>Output Program:</b></p>
+    <div class="code-container">
+      <pre><code class="language-python">Element is present at index 3</code></pre>
+    </div>
+
+    <p><b>Percobaan 5: Square Root of Integer (Binary Seach Implementation)</b></p>
+    <p><b>[Naive Approach] Using a loop - O(sqrt(n)) Time and O(1) Space</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="65" class="language-python"></code></pre>
+    </div>
+
+    <p><b>[Expected Approach] Using Binary Search - O(log(n)) Time and O(1) Space </b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="66" class="language-python"></code></pre>
+    </div>
+
+    <p><b>[Alternate Approach] Using Built In functions - O(log(n)) Time and O(1) Space </b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="67" class="language-python"></code></pre>
+    </div>
+
+    <p><b>[Alternate Approach] Using Formula Used by Pocket Calculators - O(1) Time and O(1) Space</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="68" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 7: Finding insertion points dengan bisect</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="69" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Percobaan 8: Inserting elements dengan bisect</b></p>
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code id="610" class="language-python"></code></pre>
+    </div>
+
+    <h2>Latihan</h2>
+    <p><b>Latihan 1. Hitung angka 1 dalam array biner yang diurutkan</b></p>
+    <p>Diberikan sebuah array biner arr[] berukuran n, yang diurutkan dalam urutan descending, hitung jumlah angka 1 di dalamnya.<br>
+    Contoh input output:</p>
+    <div class="code-container">
+      <pre><code id="c1" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Latihan 2. Diberikan Array berukuran n dan angka k, temukan semua elemen yang muncul lebih dari n/k kali</b></p>
+    <p>Diberikan suatu array berukuran n dan bilangan bulat k, temukan semua elemen dalam array yang muncul lebih dari n/k kali.<br>
+    Contoh input output:</p>
+    <div class="code-container">
+      <pre><code id="c2" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Latihan 3: Minimum dalam Array yang Diurutkan dan Diputar</b></p>
+    <p>Diberikan suatu array terurut dari elemen-elemen berbeda arr[] berukuran n yang diputar pada suatu titik yang tidak diketahui, tugasnya adalah menemukan elemen minimum di dalamnya.<br>
+    Contoh input output:</p>
+    <div class="code-container">
+      <pre><code id="c3" class="language-python"></code></pre>
+    </div>
+
+    <h2>Tugas</h2>
+    <p><b>Tugas 1. Mencari pasangan terdekat dari dua array terurut</b></p>
+    <p>Diberikan dua array arr1[0…m-1] dan arr2[0…n-1] yang sudah terurut, serta sebuah bilangan positif x.
+Temukan sebuah pasangan nilai (arr1[i], arr2[j]) sehingga selisih absolut |arr1[i] + arr2[j] – x| bernilai paling kecil.
+<br>
+Intinya cari dua angka, satu dari arr1 dan satu dari arr2, yang jumlahnya paling mendekati x.
+<br>Contoh input output:</p>
+    <div class="code-container">
+      <pre><code id="c4" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Tugas 2. Menemukan elemen yang sebelum semua elemennya lebih kecil/equal, dan setelahnya semua lebih besar/equal</b></p>
+    <p>Diberikan sebuah array.
+Temukan sebuah elemen yang memiliki sifat:
+<br>Semua elemen di sebelah kiri nilai tersebut adalah lebih kecil atau sama dengan nilai itu.
+<br>Semua elemen di sebelah kanan nilai tersebut adalah lebih besar atau sama dengan nilai itu.
+<br>Jika tidak ada elemen yang memenuhi kondisi tersebut, cetak -1.
+<br>Intinya cari elemen yang menjadi “batas” antara yang lebih kecil di kiri dan yang lebih besar di kanan.
+<br>Contoh input output:</p>
+    <div class="code-container">
+      <pre><code id="c5" class="language-python"></code></pre>
+    </div>
+
+    <p><b>Tugas 3. Elemen terkecil ke-k</b></p>
+    <p>Diberikan array arr[] dan sebuah nilai k.
+Temukan elemen terkecil ke-k di dalam array tersebut.
+<br>
+Catatan: nilai k selalu lebih kecil dari ukuran array, sehingga pasti ada jawabannya.
+<br>Contoh input output:</p>
+    <div class="code-container">
+      <pre><code id="c6" class="language-python"></code></pre>
+    </div>
+
+
+    <div class="nav-container">
+      <a href="index.html" class="nav-btn">Daftar Bab</a>
+      <a href="bab5.html" class="nav-btn">Bab Sebelumnya</a>
+      <a href="bab1.html" class="nav-btn">Bab Selanjutnya</a>
+    </div>
+
+  </div>
+
+   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script>
+function loadCode(fileName, elementId) {
+  fetch(fileName)
+    .then(res => res.text())
+    .then(code => {
+      const el = document.getElementById(elementId);
+      el.textContent = code;
+      Prism.highlightElement(el);
+    })
+    .catch(err => console.error('Gagal memuat file:', err));
+}
+
+// memuat file langsung dari folder /codes/
+loadCode('codes/61.txt', '61');
+loadCode('codes/62.txt', '62');
+loadCode('codes/63.txt', '63');
+loadCode('codes/64.txt', '64');
+loadCode('codes/65.txt', '65');
+loadCode('codes/66.txt', '66');
+loadCode('codes/67.txt', '67');
+loadCode('codes/68.txt', '68');
+loadCode('codes/69.txt', '69');
+loadCode('codes/610.txt', '610');
+loadCode('codes/c1.txt', 'c1');
+loadCode('codes/c2.txt', 'c2');
+loadCode('codes/c3.txt', 'c3');
+loadCode('codes/c4.txt', 'c4');
+loadCode('codes/c5.txt', 'c5');
+loadCode('codes/c6.txt', 'c6');
+  </script>
+</body>
+</html>
