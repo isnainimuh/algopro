@@ -1,0 +1,9 @@
+Input: arr[] = [1, 1, 0, 0, 0, 0, 0] 
+Output: 2 
+Penjelasan: Jumlah angka 1 dalam array yang diberikan adalah 2.
+      
+Masukan: arr[] = [1, 1, 1, 1, 1, 1, 1] 
+Keluaran: 7
+
+Masukan: arr[] = [0, 0, 0, 0, 0, 0, 0] 
+Keluaran: 0               

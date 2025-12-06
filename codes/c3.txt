@@ -1,0 +1,13 @@
+Input: arr[] = [5, 6, 1, 2, 3, 4] 
+Output: 1 
+Penjelasan: 1 adalah elemen minimum yang ada dalam array.           
+
+Input: arr[] = [3, 1, 2] 
+Output: 1 
+Penjelasan : 1 adalah elemen minimum yang ada dalam array.
+
+            
+
+Input: arr[] = [4, 2, 3] 
+Output: 2 
+Penjelasan: 2 adalah satu-satunya elemen minimum dalam array

@@ -1,0 +1,12 @@
+import math
+
+def floorSqrt(n):
+    
+    # square root using sqrt function, it returns
+    # the double value, which is casted to integer
+    res = int(math.sqrt(n))
+    return res
+
+if __name__ == "__main__":
+    n = 11
+    print(floorSqrt(n))

@@ -1,0 +1,7 @@
+Input: arr[ ] = [3, 4, 2, 2, 1, 2, 3, 3], k = 4 
+Output: [2, 3] 
+Penjelasan: Di sini n/k adalah 8/4 = 2, oleh karena itu 2 muncul 3 kali dalam array yang lebih besar dari 2 dan 3 muncul 3 kali dalam array yang lebih besar dari 2
+
+Input: arr[ ] = [9, 10, 7, 9, 2, 9, 10], k = 3 
+Output: [9] 
+Penjelasan: Di sini n/k adalah 7/3 = 2, oleh karena itu 9 muncul 3 kali dalam array yang lebih besar dari 2.         
